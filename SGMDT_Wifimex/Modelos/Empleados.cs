@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,5 +22,15 @@ namespace Modelos
         public string fechaContratacion { get; set; }
         public string Rol { get; set; }
         public bool Estatus { get; set; }
+        public Empleados(){}
+
+        public Empleados(string IdEmpleado, string nombreCompleto, string Rfc, string Curp, int edad)
+        {
+            idempleado = IdEmpleado;
+            nombrecompleto = nombreCompleto;
+            RFC = Rfc;
+            CURP = Curp;
+            Edad = edad;
+        }
     }
 }
