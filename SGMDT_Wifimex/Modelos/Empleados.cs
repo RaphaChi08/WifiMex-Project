@@ -24,13 +24,20 @@ namespace Modelos
         public bool Estatus { get; set; }
         public Empleados(){}
 
-        public Empleados(string IdEmpleado, string nombreCompleto, string Rfc, string Curp, int edad)
+        public Empleados(string IdEmpleado, string nombreCompleto, string Rfc, string Curp, int edad,
+            string direccion, string telefono,string correo, string fechacontra, string rol, bool estatus)
         {
             idempleado = IdEmpleado;
             nombrecompleto = nombreCompleto;
             RFC = Rfc;
             CURP = Curp;
             Edad = edad;
+            Direccion = direccion;
+            Telefono = telefono;
+            Correo = correo;
+            fechaContratacion = fechacontra;
+            Rol = rol;
+            Estatus = estatus;
         }
     }
 }
