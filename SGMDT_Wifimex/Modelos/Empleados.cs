@@ -21,11 +21,12 @@ namespace Modelos
         public string Correo { get; set; }
         public string fechaContratacion { get; set; }
         public string Rol { get; set; }
+        public string Password { get; set; }
         public bool Estatus { get; set; }
         public Empleados(){}
 
         public Empleados(string IdEmpleado, string nombreCompleto, string Rfc, string Curp, int edad,
-            string direccion, string telefono,string correo, string fechacontra, string rol, bool estatus)
+            string direccion, string telefono,string correo, string fechacontra, string rol, string password, bool estatus)
         {
             idempleado = IdEmpleado;
             nombrecompleto = nombreCompleto;
@@ -37,7 +38,14 @@ namespace Modelos
             Correo = correo;
             fechaContratacion = fechacontra;
             Rol = rol;
+            Password = password;
             Estatus = estatus;
+        }
+
+        public Empleados(string idempleado, string nombreCompleto)
+        {
+            this.idempleado = idempleado;
+            nombrecompleto = nombreCompleto;
         }
     }
 }
