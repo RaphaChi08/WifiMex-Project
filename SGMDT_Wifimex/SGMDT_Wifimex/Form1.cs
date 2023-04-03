@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos;
+using Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,24 @@ namespace SGMDT_Wifimex
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            DAOEmpleados dao = new DAOEmpleados();
+            Empleados empleados = dao.IniciarSeccion(txtUsuario.Text, txtPassword.Text);
+            if (empleados != null)
+            {
+                MessageBox.Show("Bienvenido usuario " + empleados.idempleado +
+                    "\n con puesto " + empleados.Rol);
+                frmMenuPrincipal ini = new frmMenuPrincipal(empleados.idempleado, empleados.nombrecompleto);
+                ini.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario y/o Contraseña incorrectos");
+            }
         }
     }
 }

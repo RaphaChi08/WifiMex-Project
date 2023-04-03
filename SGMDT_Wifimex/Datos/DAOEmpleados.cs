@@ -17,7 +17,7 @@ namespace Datos
             {
                 if (Conexion.conectar())
                 {
-                    MySqlCommand comando = new MySqlCommand("SELECT * FROM empleados WHERE idEmpleado=@Usuario AND password=sha1(@Password) and StatusEmployee=1");
+                    MySqlCommand comando = new MySqlCommand("SELECT * FROM empleados WHERE idEmpleado=@Usuario AND pas=sha1(@Password) and Estatus=1");
                     comando.Parameters.AddWithValue("@Usuario", usuario);
                     comando.Parameters.AddWithValue("@Password", password);
                     comando.Connection = Conexion.conexion;
@@ -29,7 +29,7 @@ namespace Datos
                     {
                         objUsuario = new Empleados(
                             resultado.Rows[0]["idEmpleado"].ToString(),
-                            resultado.Rows[0]["nombrecompleto"].ToString()
+                            resultado.Rows[0]["nomEmpleados"].ToString()
                             );
                     }
                     return objUsuario;
@@ -62,7 +62,7 @@ namespace Datos
                     {
                         objEmpleado = new Empleados();
                         objEmpleado.idempleado = (fila["IdEmpleado"].ToString());
-                        objEmpleado.nombrecompleto = fila["NombreCompleto"].ToString();
+                        objEmpleado.nombrecompleto = fila["nomEmpleados"].ToString();
                         objEmpleado.RFC = fila["RFC"].ToString();
                         objEmpleado.CURP = fila["CURP"].ToString();
                         objEmpleado.Direccion = fila["Direccion"].ToString();
@@ -124,7 +124,7 @@ namespace Datos
                 if (ex.Number == 1062)
                 {
                     MySqlCommand comando = new MySqlCommand(
-                        @"update Employees set StatusEmployee=1 where idEmpleado=@idEmpleado and statusemployee=0");
+                        @"update Employees set Estatus=1 where idEmpleado=@idEmpleado and Estatus=0");
                     comando.Parameters.AddWithValue("@idEmpeado", emp.idempleado);
                     comando.Connection = Conexion.conexion;
                     comando.Connection = Conexion.conexion;
