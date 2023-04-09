@@ -13,6 +13,13 @@ namespace SGMDT_Wifimex
     public partial class frmMenuPrincipal : Form
     {
         private String Idempelado,nombreCompleto;
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            frmEmpleados frm = new frmEmpleados();
+            frm.Show();
+        }
+
         public frmMenuPrincipal(string idempleado, string nombrecompleto)
         {
             InitializeComponent();

@@ -25,9 +25,9 @@ namespace SGMDT_Wifimex
             Empleados empleados = dao.IniciarSeccion(txtUsuario.Text, txtPassword.Text);
             if (empleados != null)
             {
-                MessageBox.Show("Bienvenido usuario " + empleados.idempleado +
+                MessageBox.Show("Bienvenido usuario " + empleados.Idempleado +
                     "\n con puesto " + empleados.Rol);
-                frmMenuPrincipal ini = new frmMenuPrincipal(empleados.idempleado, empleados.nombrecompleto);
+                frmMenuPrincipal ini = new frmMenuPrincipal(empleados.Idempleado, empleados.Nombrecompleto);
                 ini.Show();
                 this.Hide();
             }

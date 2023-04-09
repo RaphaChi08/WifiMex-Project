@@ -11,8 +11,8 @@ namespace Modelos
 {
     public class Empleados
     {
-        public string idempleado { get; set; }
-        public string nombrecompleto { get; set; }
+        public string Idempleado { get; set; }
+        public string Nombrecompleto { get; set; }
         public string RFC { get; set; }
         public string CURP { get; set; }
         public int Edad { get; set; }
@@ -28,8 +28,8 @@ namespace Modelos
         public Empleados(string IdEmpleado, string nombreCompleto, string Rfc, string Curp, int edad,
             string direccion, string telefono,string correo, string fechacontra, string rol, string password, bool estatus)
         {
-            idempleado = IdEmpleado;
-            nombrecompleto = nombreCompleto;
+            Idempleado = IdEmpleado;
+            Nombrecompleto = nombreCompleto;
             RFC = Rfc;
             CURP = Curp;
             Edad = edad;
@@ -44,8 +44,8 @@ namespace Modelos
 
         public Empleados(string idempleado, string nombreCompleto)
         {
-            this.idempleado = idempleado;
-            nombrecompleto = nombreCompleto;
+            this.Idempleado = idempleado;
+            Nombrecompleto = nombreCompleto;
         }
     }
 }

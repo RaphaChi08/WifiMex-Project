@@ -61,8 +61,8 @@ namespace Datos
                     foreach (DataRow fila in resultado.Rows)
                     {
                         objEmpleado = new Empleados();
-                        objEmpleado.idempleado = (fila["IdEmpleado"].ToString());
-                        objEmpleado.nombrecompleto = fila["nomEmpleados"].ToString();
+                        objEmpleado.Idempleado = (fila["idEmpleado"].ToString());
+                        objEmpleado.Nombrecompleto = fila["nomEmpleados"].ToString();
                         objEmpleado.RFC = fila["RFC"].ToString();
                         objEmpleado.CURP = fila["CURP"].ToString();
                         objEmpleado.Direccion = fila["Direccion"].ToString();
@@ -99,8 +99,8 @@ namespace Datos
                 {
                     MySqlCommand comando = new MySqlCommand(
                     "INSERT INTO empleados VALUES(@idEmpleado,@name,@RFC,@Edad,@direccion,@correo,@rol,sha1(@password),@State);");
-                    comando.Parameters.AddWithValue("@idEmpleado", emp.idempleado);
-                    comando.Parameters.AddWithValue("@name", emp.nombrecompleto);
+                    comando.Parameters.AddWithValue("@idEmpleado", emp.Idempleado);
+                    comando.Parameters.AddWithValue("@name", emp.Nombrecompleto);
                     comando.Parameters.AddWithValue("@RFC", emp.RFC);
                     comando.Parameters.AddWithValue("@Edad", emp.Edad);
                     comando.Parameters.AddWithValue("@direccion", emp.Direccion);
@@ -125,7 +125,7 @@ namespace Datos
                 {
                     MySqlCommand comando = new MySqlCommand(
                         @"update Employees set Estatus=1 where idEmpleado=@idEmpleado and Estatus=0");
-                    comando.Parameters.AddWithValue("@idEmpeado", emp.idempleado);
+                    comando.Parameters.AddWithValue("@idEmpeado", emp.Idempleado);
                     comando.Connection = Conexion.conexion;
                     comando.Connection = Conexion.conexion;
                     return comando.ExecuteNonQuery();

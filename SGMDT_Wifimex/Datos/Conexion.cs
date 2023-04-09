@@ -14,7 +14,7 @@ namespace Datos
         public static MySqlTransaction transaccion;
         static string usuario = "root";
         static string password = "12345";
-        static string bd = "DBWifiMex";
+        static string bd = "dbwifimex";
         static string servidor = "localhost";
         static string puerto = "3306";
 
