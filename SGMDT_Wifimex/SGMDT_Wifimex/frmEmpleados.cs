@@ -34,5 +34,10 @@ namespace SGMDT_Wifimex
             dgvEmpleados.Columns["Password"].Visible = false;
             dgvEmpleados.Columns["Estatus"].Visible = false;
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

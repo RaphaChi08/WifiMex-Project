@@ -91,6 +91,50 @@ namespace Datos
             }
         }
 
+        public Empleados ObtenerUnEmpleado(string id)
+        {
+            try
+            {
+                if (Conexion.conectar())
+                {
+                    MySqlCommand comando = new MySqlCommand("select * from empleados where idEmpleado=@id");
+                    comando.Parameters.AddWithValue("@id", id);
+                    comando.Connection = Conexion.conexion;
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+                    DataTable resultado = new DataTable();
+                    adapter.Fill(resultado);
+                    Empleados objEmpleado = null;
+                    if (resultado.Rows.Count > 0)
+                    {
+                        objEmpleado = new Empleados();
+                        DataRow fila = resultado.Rows[0];
+                        objEmpleado.Idempleado = fila["IDEmployee"].ToString();
+                        objEmpleado.Nombrecompleto = fila["nomEmpleados"].ToString();
+                        objEmpleado.RFC = fila["RFC"].ToString();
+                        objEmpleado.CURP = fila["CURP"].ToString();
+                        objEmpleado.Direccion = fila["Direccion"].ToString();
+                        objEmpleado.Telefono = fila["Telefono"].ToString();
+                        objEmpleado.Correo = fila["Correo"].ToString();
+                        objEmpleado.fechaContratacion = fila["fechaContratacion"].ToString();
+                        objEmpleado.Rol = fila["Rol"].ToString();
+                    }
+
+                    return objEmpleado;
+                }
+                else
+                {
+                    throw new Exception("No se ha podido conectar con el servidor");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception("No se pudo obtener la informacion del empleado");
+            }
+            finally
+            {
+                Conexion.desconectar();
+            }
+        }
         public int AgregarEmpleado(Empleados emp)
         {
             try
