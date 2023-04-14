@@ -31,9 +31,12 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBusccar = new System.Windows.Forms.Button();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.btnTodos = new System.Windows.Forms.Button();
+            this.btnInactivos = new System.Windows.Forms.Button();
+            this.btnActivos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +58,7 @@
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
@@ -65,12 +69,12 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(320, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 22);
-            this.textBox1.TabIndex = 3;
+            this.txtBuscar.Location = new System.Drawing.Point(320, 36);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(171, 22);
+            this.txtBuscar.TabIndex = 3;
             // 
             // btnBusccar
             // 
@@ -80,6 +84,7 @@
             this.btnBusccar.TabIndex = 4;
             this.btnBusccar.Text = "buscar";
             this.btnBusccar.UseVisualStyleBackColor = true;
+            this.btnBusccar.Click += new System.EventHandler(this.btnBusccar_Click);
             // 
             // dgvEmpleados
             // 
@@ -98,14 +103,45 @@
             this.dgvEmpleados.Size = new System.Drawing.Size(1262, 387);
             this.dgvEmpleados.TabIndex = 0;
             // 
+            // btnTodos
+            // 
+            this.btnTodos.Location = new System.Drawing.Point(1178, 35);
+            this.btnTodos.Name = "btnTodos";
+            this.btnTodos.Size = new System.Drawing.Size(75, 23);
+            this.btnTodos.TabIndex = 5;
+            this.btnTodos.Text = "Todos";
+            this.btnTodos.UseVisualStyleBackColor = true;
+            this.btnTodos.Click += new System.EventHandler(this.btnTodos_Click);
+            // 
+            // btnInactivos
+            // 
+            this.btnInactivos.Location = new System.Drawing.Point(1097, 35);
+            this.btnInactivos.Name = "btnInactivos";
+            this.btnInactivos.Size = new System.Drawing.Size(75, 23);
+            this.btnInactivos.TabIndex = 6;
+            this.btnInactivos.Text = "Activos";
+            this.btnInactivos.UseVisualStyleBackColor = true;
+            // 
+            // btnActivos
+            // 
+            this.btnActivos.Location = new System.Drawing.Point(1016, 35);
+            this.btnActivos.Name = "btnActivos";
+            this.btnActivos.Size = new System.Drawing.Size(75, 23);
+            this.btnActivos.TabIndex = 7;
+            this.btnActivos.Text = "Inactivos";
+            this.btnActivos.UseVisualStyleBackColor = true;
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1265, 450);
+            this.Controls.Add(this.btnActivos);
+            this.Controls.Add(this.btnInactivos);
+            this.Controls.Add(this.btnTodos);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.btnBusccar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
@@ -122,8 +158,11 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBusccar;
         private System.Windows.Forms.DataGridView dgvEmpleados;
+        private System.Windows.Forms.Button btnTodos;
+        private System.Windows.Forms.Button btnInactivos;
+        private System.Windows.Forms.Button btnActivos;
     }
 }

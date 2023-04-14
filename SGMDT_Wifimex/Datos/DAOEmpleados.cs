@@ -108,10 +108,11 @@ namespace Datos
                     {
                         objEmpleado = new Empleados();
                         DataRow fila = resultado.Rows[0];
-                        objEmpleado.Idempleado = fila["IDEmployee"].ToString();
+                        objEmpleado.Idempleado = fila["idEmpleado"].ToString();
                         objEmpleado.Nombrecompleto = fila["nomEmpleados"].ToString();
                         objEmpleado.RFC = fila["RFC"].ToString();
                         objEmpleado.CURP = fila["CURP"].ToString();
+                        objEmpleado.Edad = Convert.ToInt32(fila["Edad"]);
                         objEmpleado.Direccion = fila["Direccion"].ToString();
                         objEmpleado.Telefono = fila["Telefono"].ToString();
                         objEmpleado.Correo = fila["Correo"].ToString();
@@ -142,11 +143,12 @@ namespace Datos
                 if (Conexion.conectar())
                 {
                     MySqlCommand comando = new MySqlCommand(
-                    "INSERT INTO empleados VALUES(@idEmpleado,@name,@RFC,@Edad,@direccion,@correo,@rol,sha1(@password),@State);");
+                    "INSERT INTO empleados VALUES(@idEmpleado,@name,@RFC,@CURP,@Edad,@direccion,@telefono,@correo,@fechacontratacion,@rol,sha1(@password),@State);");
                     comando.Parameters.AddWithValue("@idEmpleado", emp.Idempleado);
                     comando.Parameters.AddWithValue("@name", emp.Nombrecompleto);
                     comando.Parameters.AddWithValue("@RFC", emp.RFC);
-                    comando.Parameters.AddWithValue("@Edad", emp.Edad);
+                    comando.Parameters.AddWithValue("@CURP", emp.CURP);
+                    comando.Parameters.AddWithValue("@Edad", Convert.ToInt32(emp.Edad));
                     comando.Parameters.AddWithValue("@direccion", emp.Direccion);
                     comando.Parameters.AddWithValue("@telefono", emp.Telefono);
                     comando.Parameters.AddWithValue("@correo", emp.Correo);
@@ -184,6 +186,43 @@ namespace Datos
                 Conexion.desconectar();
             }
 
+        }
+
+        public bool ModificarEmpleado(Empleados emp)
+        {
+            try
+            {
+                if (Conexion.conectar())
+                {
+                    MySqlCommand comando = new MySqlCommand(
+                    "update empleados set nomEmpleados=@name,RFC=@RFC,CURP=@CURP,Edad=@Edad,Direccion=@direccion,Telefono=@telefono," +
+                    "Correo=@correo,Rol=@rol where idEmpleado=@idEmpleado");
+                    comando.Parameters.AddWithValue("@idEmpleado", emp.Idempleado);
+                    comando.Parameters.AddWithValue("@name", emp.Nombrecompleto);
+                    comando.Parameters.AddWithValue("@RFC", emp.RFC);
+                    comando.Parameters.AddWithValue("@CURP", emp.CURP);
+                    comando.Parameters.AddWithValue("@Edad", Convert.ToInt32(emp.Edad));
+                    comando.Parameters.AddWithValue("@direccion", emp.Direccion);
+                    comando.Parameters.AddWithValue("@telefono", emp.Telefono);
+                    comando.Parameters.AddWithValue("@correo", emp.Correo);
+                    comando.Parameters.AddWithValue("@rol", emp.Rol);
+                    comando.Connection = Conexion.conexion;
+                    int filasEditadas = comando.ExecuteNonQuery();
+                    return (filasEditadas > 0);
+                }
+                else
+                {
+                    throw new Exception("No se ha podido conectar con el servidor");
+                }
+            }
+            /*catch (MySqlException ex)
+            {
+                throw new Exception("No se pudo actualizar la información del empleado");
+            }*/
+            finally
+            {
+                Conexion.desconectar();
+            }
         }
     }
 }
