@@ -84,5 +84,25 @@ namespace SGMDT_Wifimex
         {
             CargarTablaEm();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvEmpleados.SelectedRows.Count > 0)
+            {
+                String idEmleado = dgvEmpleados.SelectedRows[0].Cells["idEmpleado"].Value.ToString();
+                DialogResult resp = MessageBox.Show("Estas a punto de eliminar a " +
+                                    (new DAOEmpleados().ObtenerUnEmpleado(idEmleado).Nombrecompleto) +
+                                    " de las listas, ¿Deseas continuar?", "",
+                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resp == DialogResult.Yes)
+                {
+                    if (new DAOEmpleados().EliminarEmpleado(idEmleado))
+                    {
+                        MessageBox.Show("Se a eliminado el empleado seleccionada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarTabla();
+                    }
+                }
+            }
+        }
     }
 }

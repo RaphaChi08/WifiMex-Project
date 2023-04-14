@@ -224,5 +224,54 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
+
+        public bool EliminarEmpleado(string id)
+        {
+            try
+            {
+                if (Conexion.conectar())
+                {
+                    MySqlCommand comando = new MySqlCommand(
+                        @"delete from empleados where idEmpleado=@Id");
+                    comando.Parameters.AddWithValue("@id", id);
+                    comando.Connection = Conexion.conexion;
+                    int filasBorradas = comando.ExecuteNonQuery();
+                    return (filasBorradas > 0);
+
+                }
+                else
+                {
+                    throw new Exception("No se ha podido conectar con el servidor");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                if (ex.Number == 1451)
+                {
+                    try
+                    {
+                        MySqlCommand comando = new MySqlCommand(
+                        @"update empleados set Estatus=0 where idEmpleado=@Id");
+                        comando.Parameters.AddWithValue("@id", id);
+                        comando.Connection = Conexion.conexion;
+                        int filasBorradas = comando.ExecuteNonQuery();
+                        return (filasBorradas > 0);
+                    }
+                    catch
+                    {
+                        throw new Exception("Usuario ya eliminado");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Error al intentar eliminar el empleado");
+                }
+
+            }
+            finally
+            {
+                Conexion.desconectar();
+            }
+        }
     }
 }
