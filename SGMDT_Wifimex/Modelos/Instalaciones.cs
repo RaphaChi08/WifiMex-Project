@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelos
 {
-    internal class Instalaciones
+    public class Instalaciones
     {
         public string IdInstalacion { get; set; }
         public string fechaInstalacin { get; set; }

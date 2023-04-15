@@ -352,10 +352,10 @@ namespace Datos
                     throw new Exception("No se ha podido conectar con el servidor");
                 }
             }
-            /*catch (MySqlException ex)
+            catch (MySqlException ex)
             {
                 throw new Exception("No se pudo actualizar la información del empleado");
-            }*/
+            }
             finally
             {
                 Conexion.desconectar();
@@ -388,7 +388,7 @@ namespace Datos
                     try
                     {
                         MySqlCommand comando = new MySqlCommand(
-                        @"update empleados set Estatus=0 where idEmpleado=@Id");
+                        @"update empleados set Estatus=false where idEmpleado=@Id");
                         comando.Parameters.AddWithValue("@id", id);
                         comando.Connection = Conexion.conexion;
                         int filasBorradas = comando.ExecuteNonQuery();

@@ -58,11 +58,23 @@
     <Compile Include="frmAgregarModificar.Designer.cs">
       <DependentUpon>frmAgregarModificar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgregarModificarInsta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarModificarInsta.Designer.cs">
+      <DependentUpon>frmAgregarModificarInsta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmpleados.Designer.cs">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInstalaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInstalaciones.Designer.cs">
+      <DependentUpon>frmInstalaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenuPrincipal.cs">
       <SubType>Form</SubType>
