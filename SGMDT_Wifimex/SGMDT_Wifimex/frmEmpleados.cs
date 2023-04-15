@@ -18,6 +18,22 @@ namespace SGMDT_Wifimex
             InitializeComponent();
             CargarTabla();
         }
+        public void CargarTablaAc()
+        {
+            dgvEmpleados.DataSource = new DAOEmpleados().ObtenerEmpleadosActivos();
+            dgvEmpleados.Columns["idEmpleado"].Visible = false;
+            dgvEmpleados.Columns["Nombrecompleto"].HeaderText = "Nombre Empleado";
+            dgvEmpleados.Columns["RFC"].HeaderText = "RFC";
+            dgvEmpleados.Columns["CURP"].HeaderText = "CURP";
+            dgvEmpleados.Columns["Edad"].Visible = false;
+            dgvEmpleados.Columns["Direccion"].Visible = false;
+            dgvEmpleados.Columns["Telefono"].HeaderText = "Telefono";
+            dgvEmpleados.Columns["Correo"].HeaderText = "Correo";
+            dgvEmpleados.Columns["fechaContratacion"].HeaderText = "Fecha de Contratacion";
+            dgvEmpleados.Columns["Rol"].HeaderText = "Rol";
+            dgvEmpleados.Columns["Password"].Visible = false;
+            dgvEmpleados.Columns["Estatus"].Visible = false;
+        }
         public void CargarTabla()
         {
             dgvEmpleados.DataSource = new DAOEmpleados().ObtenerEmpleados();
@@ -34,9 +50,25 @@ namespace SGMDT_Wifimex
             dgvEmpleados.Columns["Password"].Visible = false;
             dgvEmpleados.Columns["Estatus"].Visible = false;
         }
+        public void CargarTablaIn()
+        {
+            dgvEmpleados.DataSource = new DAOEmpleados().ObtenerEmpleadosInactivos();
+            dgvEmpleados.Columns["idEmpleado"].Visible = false;
+            dgvEmpleados.Columns["Nombrecompleto"].HeaderText = "Nombre Empleado";
+            dgvEmpleados.Columns["RFC"].HeaderText = "RFC";
+            dgvEmpleados.Columns["CURP"].HeaderText = "CURP";
+            dgvEmpleados.Columns["Edad"].Visible = false;
+            dgvEmpleados.Columns["Direccion"].Visible = false;
+            dgvEmpleados.Columns["Telefono"].HeaderText = "Telefono";
+            dgvEmpleados.Columns["Correo"].HeaderText = "Correo";
+            dgvEmpleados.Columns["fechaContratacion"].HeaderText = "Fecha de Contratacion";
+            dgvEmpleados.Columns["Rol"].HeaderText = "Rol";
+            dgvEmpleados.Columns["Password"].Visible = false;
+            dgvEmpleados.Columns["Estatus"].Visible = false;
+        }
         public void CargarTablaEm()
         {
-            dgvEmpleados.DataSource = new DAOEmpleados().ObtenerUnEmpleado(txtBuscar.Text);
+            dgvEmpleados.DataSource = new DAOEmpleados().ObtenerEmpleado(txtBuscar.Text);
             dgvEmpleados.Columns["idEmpleado"].Visible = false;
             dgvEmpleados.Columns["Nombrecompleto"].HeaderText = "Nombre Empleado";
             dgvEmpleados.Columns["RFC"].HeaderText = "RFC";
@@ -103,6 +135,16 @@ namespace SGMDT_Wifimex
                     }
                 }
             }
+        }
+
+        private void btnInactivos_Click(object sender, EventArgs e)
+        {
+            CargarTablaAc();
+        }
+
+        private void btnActivos_Click(object sender, EventArgs e)
+        {
+            CargarTablaIn();
         }
     }
 }

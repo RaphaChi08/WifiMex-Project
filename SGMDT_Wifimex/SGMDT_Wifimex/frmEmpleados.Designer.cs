@@ -122,6 +122,7 @@
             this.btnInactivos.TabIndex = 6;
             this.btnInactivos.Text = "Activos";
             this.btnInactivos.UseVisualStyleBackColor = true;
+            this.btnInactivos.Click += new System.EventHandler(this.btnInactivos_Click);
             // 
             // btnActivos
             // 
@@ -131,6 +132,7 @@
             this.btnActivos.TabIndex = 7;
             this.btnActivos.Text = "Inactivos";
             this.btnActivos.UseVisualStyleBackColor = true;
+            this.btnActivos.Click += new System.EventHandler(this.btnActivos_Click);
             // 
             // frmEmpleados
             // 

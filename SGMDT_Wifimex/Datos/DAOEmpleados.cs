@@ -90,6 +90,143 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
+        public List<Empleados> ObtenerEmpleado(string id)
+        {
+            try
+            {
+                if (Conexion.conectar())
+                {
+                    MySqlCommand comando = new MySqlCommand("select * from empleados where idEmpleado=@id");
+                    comando.Parameters.AddWithValue("@id", id);
+                    comando.Connection = Conexion.conexion;
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+                    DataTable resultado = new DataTable();
+                    adapter.Fill(resultado);
+                    List<Empleados> lista = new List<Empleados>();
+                    Empleados objEmpleado = null;
+                    foreach (DataRow fila in resultado.Rows)
+                    {
+                        objEmpleado = new Empleados();
+                        objEmpleado.Idempleado = (fila["idEmpleado"].ToString());
+                        objEmpleado.Nombrecompleto = fila["nomEmpleados"].ToString();
+                        objEmpleado.RFC = fila["RFC"].ToString();
+                        objEmpleado.CURP = fila["CURP"].ToString();
+                        objEmpleado.Direccion = fila["Direccion"].ToString();
+                        objEmpleado.Telefono = fila["Telefono"].ToString();
+                        objEmpleado.Correo = fila["Correo"].ToString();
+                        objEmpleado.fechaContratacion = fila["fechaContratacion"].ToString();
+                        objEmpleado.Rol = fila["Rol"].ToString();
+                        objEmpleado.Estatus = (Convert.ToInt32(fila["Estatus"]) == 1 ? true : false);
+                        lista.Add(objEmpleado);
+                    }
+
+                    return lista;
+                }
+                else
+                {
+                    throw new Exception("No se ha podido conectar con el servidor");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception("No se pudo obtener la información de los empleados");
+            }
+            finally
+            {
+                Conexion.desconectar();
+            }
+        }
+
+        public List<Empleados> ObtenerEmpleadosActivos()
+        {
+            try
+            {
+                if (Conexion.conectar())
+                {
+                    MySqlCommand comando = new MySqlCommand("select * from empleados where Estatus=true");
+                    comando.Connection = Conexion.conexion;
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+                    DataTable resultado = new DataTable();
+                    adapter.Fill(resultado);
+                    List<Empleados> lista = new List<Empleados>();
+                    Empleados objEmpleado = null;
+                    foreach (DataRow fila in resultado.Rows)
+                    {
+                        objEmpleado = new Empleados();
+                        objEmpleado.Idempleado = (fila["idEmpleado"].ToString());
+                        objEmpleado.Nombrecompleto = fila["nomEmpleados"].ToString();
+                        objEmpleado.RFC = fila["RFC"].ToString();
+                        objEmpleado.CURP = fila["CURP"].ToString();
+                        objEmpleado.Direccion = fila["Direccion"].ToString();
+                        objEmpleado.Telefono = fila["Telefono"].ToString();
+                        objEmpleado.Correo = fila["Correo"].ToString();
+                        objEmpleado.fechaContratacion = fila["fechaContratacion"].ToString();
+                        objEmpleado.Rol = fila["Rol"].ToString();
+                        objEmpleado.Estatus = (Convert.ToInt32(fila["Estatus"]) == 1 ? true : false);
+                        lista.Add(objEmpleado);
+                    }
+
+                    return lista;
+                }
+                else
+                {
+                    throw new Exception("No se ha podido conectar con el servidor");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception("No se pudo obtener la información de los empleados");
+            }
+            finally
+            {
+                Conexion.desconectar();
+            }
+        }
+        public List<Empleados> ObtenerEmpleadosInactivos()
+        {
+            try
+            {
+                if (Conexion.conectar())
+                {
+                    MySqlCommand comando = new MySqlCommand("select * from empleados where Estatus=false");
+                    comando.Connection = Conexion.conexion;
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+                    DataTable resultado = new DataTable();
+                    adapter.Fill(resultado);
+                    List<Empleados> lista = new List<Empleados>();
+                    Empleados objEmpleado = null;
+                    foreach (DataRow fila in resultado.Rows)
+                    {
+                        objEmpleado = new Empleados();
+                        objEmpleado.Idempleado = (fila["idEmpleado"].ToString());
+                        objEmpleado.Nombrecompleto = fila["nomEmpleados"].ToString();
+                        objEmpleado.RFC = fila["RFC"].ToString();
+                        objEmpleado.CURP = fila["CURP"].ToString();
+                        objEmpleado.Direccion = fila["Direccion"].ToString();
+                        objEmpleado.Telefono = fila["Telefono"].ToString();
+                        objEmpleado.Correo = fila["Correo"].ToString();
+                        objEmpleado.fechaContratacion = fila["fechaContratacion"].ToString();
+                        objEmpleado.Rol = fila["Rol"].ToString();
+                        objEmpleado.Estatus = (Convert.ToInt32(fila["Estatus"]) == 1 ? true : false);
+                        lista.Add(objEmpleado);
+                    }
+
+                    return lista;
+                }
+                else
+                {
+                    throw new Exception("No se ha podido conectar con el servidor");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception("No se pudo obtener la información de los empleados");
+            }
+            finally
+            {
+                Conexion.desconectar();
+            }
+        }
 
         public Empleados ObtenerUnEmpleado(string id)
         {
