@@ -26,6 +26,11 @@ namespace SGMDT_Wifimex
             frm.Show();
         }
 
+        private void frmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         public frmMenuPrincipal(string idempleado, string nombrecompleto)
         {
             InitializeComponent();

@@ -116,6 +116,7 @@
             this.Controls.Add(this.btnEmpleados);
             this.Name = "frmMenuPrincipal";
             this.Text = "frmMenuPrincipal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMenuPrincipal_FormClosed);
             this.ResumeLayout(false);
 
         }
