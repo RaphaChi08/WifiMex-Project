@@ -70,7 +70,7 @@ namespace SGMDT_Wifimex
             if (dgvInstalaciones.SelectedRows.Count > 0)
             {
                 string idCategoria = dgvInstalaciones.SelectedRows[0].Cells["IdInstalacion"].Value.ToString();
-                frmAgregarModificar frm = new frmAgregarModificar(2, idCategoria);
+                frmAgregarModificarInsta frm = new frmAgregarModificarInsta(2, idCategoria);
                 frm.ShowDialog();
                 if (frm.Modificado)
                 {
