@@ -55,6 +55,7 @@
             this.btnInstalaciones.TabIndex = 1;
             this.btnInstalaciones.Text = "Instalaciones";
             this.btnInstalaciones.UseVisualStyleBackColor = true;
+            this.btnInstalaciones.Click += new System.EventHandler(this.btnInstalaciones_Click);
             // 
             // btnContratos
             // 

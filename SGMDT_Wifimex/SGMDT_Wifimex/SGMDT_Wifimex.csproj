@@ -90,8 +90,14 @@
     <EmbeddedResource Include="frmAgregarModificar.resx">
       <DependentUpon>frmAgregarModificar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarModificarInsta.resx">
+      <DependentUpon>frmAgregarModificarInsta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstalaciones.resx">
+      <DependentUpon>frmInstalaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>

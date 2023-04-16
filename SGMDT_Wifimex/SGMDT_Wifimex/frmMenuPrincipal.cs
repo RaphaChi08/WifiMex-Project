@@ -20,6 +20,12 @@ namespace SGMDT_Wifimex
             frm.Show();
         }
 
+        private void btnInstalaciones_Click(object sender, EventArgs e)
+        {
+            frmInstalaciones frm = new frmInstalaciones();
+            frm.Show();
+        }
+
         public frmMenuPrincipal(string idempleado, string nombrecompleto)
         {
             InitializeComponent();

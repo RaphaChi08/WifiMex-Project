@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Datos
 {
-    internal class DAOInstalaciones
+    public class DAOInstalaciones
     {
         public List<Instalaciones> ObtenerInstalaciones()
         {
@@ -140,7 +140,7 @@ namespace Datos
             {
                 if (Conexion.conectar())
                 {
-                    MySqlCommand comando = new MySqlCommand("select * from instalaciones where idInstalacion=@id");
+                    MySqlCommand comando = new MySqlCommand("select * from instalaciones where idInstalacion=@id or idEmpleado=@id or idContrato=@id");
                     comando.Parameters.AddWithValue("@id", id);
                     comando.Connection = Conexion.conexion;
                     MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
@@ -216,7 +216,7 @@ namespace Datos
             }
         }
 
-        public int AgregarEmpleado(Instalaciones ins)
+        public int AgregarInstlacion(Instalaciones ins)
         {
             try
             {
