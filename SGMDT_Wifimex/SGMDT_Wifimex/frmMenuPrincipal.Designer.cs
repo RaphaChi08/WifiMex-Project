@@ -41,7 +41,7 @@
             // 
             this.btnEmpleados.Location = new System.Drawing.Point(65, 48);
             this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(75, 23);
+            this.btnEmpleados.Size = new System.Drawing.Size(145, 23);
             this.btnEmpleados.TabIndex = 0;
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.UseVisualStyleBackColor = true;
@@ -51,7 +51,7 @@
             // 
             this.btnInstalaciones.Location = new System.Drawing.Point(449, 48);
             this.btnInstalaciones.Name = "btnInstalaciones";
-            this.btnInstalaciones.Size = new System.Drawing.Size(75, 23);
+            this.btnInstalaciones.Size = new System.Drawing.Size(145, 23);
             this.btnInstalaciones.TabIndex = 1;
             this.btnInstalaciones.Text = "Instalaciones";
             this.btnInstalaciones.UseVisualStyleBackColor = true;
@@ -61,16 +61,17 @@
             // 
             this.btnContratos.Location = new System.Drawing.Point(65, 197);
             this.btnContratos.Name = "btnContratos";
-            this.btnContratos.Size = new System.Drawing.Size(75, 23);
+            this.btnContratos.Size = new System.Drawing.Size(145, 23);
             this.btnContratos.TabIndex = 2;
             this.btnContratos.Text = "Contratos";
             this.btnContratos.UseVisualStyleBackColor = true;
+            this.btnContratos.Click += new System.EventHandler(this.btnContratos_Click);
             // 
             // btnProductos
             // 
             this.btnProductos.Location = new System.Drawing.Point(261, 117);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(75, 23);
+            this.btnProductos.Size = new System.Drawing.Size(145, 23);
             this.btnProductos.TabIndex = 3;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
@@ -79,16 +80,17 @@
             // 
             this.btnClientes.Location = new System.Drawing.Point(65, 117);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(75, 23);
+            this.btnClientes.Size = new System.Drawing.Size(145, 23);
             this.btnClientes.TabIndex = 4;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnProveedores
             // 
             this.btnProveedores.Location = new System.Drawing.Point(449, 197);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(75, 23);
+            this.btnProveedores.Size = new System.Drawing.Size(145, 23);
             this.btnProveedores.TabIndex = 5;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = true;
@@ -97,10 +99,11 @@
             // 
             this.btnAlmacen.Location = new System.Drawing.Point(449, 117);
             this.btnAlmacen.Name = "btnAlmacen";
-            this.btnAlmacen.Size = new System.Drawing.Size(75, 23);
+            this.btnAlmacen.Size = new System.Drawing.Size(145, 23);
             this.btnAlmacen.TabIndex = 6;
             this.btnAlmacen.Text = "Almacen";
             this.btnAlmacen.UseVisualStyleBackColor = true;
+            this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
             // 
             // frmMenuPrincipal
             // 

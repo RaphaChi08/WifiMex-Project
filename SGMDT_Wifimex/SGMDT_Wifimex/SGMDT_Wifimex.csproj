@@ -52,6 +52,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddModyAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddModyAlmacen.Designer.cs">
+      <DependentUpon>frmAddModyAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddModyCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddModyCliente.Designer.cs">
+      <DependentUpon>frmAddModyCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddModyContratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddModyContratos.Designer.cs">
+      <DependentUpon>frmAddModyContratos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarModificar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +81,24 @@
     </Compile>
     <Compile Include="frmAgregarModificarInsta.Designer.cs">
       <DependentUpon>frmAgregarModificarInsta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlmacen.Designer.cs">
+      <DependentUpon>frmAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmContratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContratos.Designer.cs">
+      <DependentUpon>frmContratos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmpleados.cs">
       <SubType>Form</SubType>
@@ -87,11 +123,29 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddModyAlmacen.resx">
+      <DependentUpon>frmAddModyAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddModyCliente.resx">
+      <DependentUpon>frmAddModyCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddModyContratos.resx">
+      <DependentUpon>frmAddModyContratos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarModificar.resx">
       <DependentUpon>frmAgregarModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarModificarInsta.resx">
       <DependentUpon>frmAgregarModificarInsta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlmacen.resx">
+      <DependentUpon>frmAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContratos.resx">
+      <DependentUpon>frmContratos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
@@ -110,6 +164,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -133,6 +188,15 @@
       <Project>{8cf57f58-a091-49c1-80a4-c261277fb243}</Project>
       <Name>Modelos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

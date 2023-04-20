@@ -31,6 +31,24 @@ namespace SGMDT_Wifimex
             Application.Exit();
         }
 
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            frmClientes frm = new frmClientes();
+            frm.Show();
+        }
+
+        private void btnContratos_Click(object sender, EventArgs e)
+        {
+            frmContratos frm = new frmContratos();
+            frm.Show();
+        }
+
+        private void btnAlmacen_Click(object sender, EventArgs e)
+        {
+            frmAlmacen frm= new frmAlmacen();
+            frm.Show();
+        }
+
         public frmMenuPrincipal(string idempleado, string nombrecompleto)
         {
             InitializeComponent();
