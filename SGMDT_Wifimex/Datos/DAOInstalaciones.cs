@@ -216,6 +216,7 @@ namespace Datos
             }
         }
 
+        // Metodo para agregar una instalacion
         public int AgregarInstlacion(Instalaciones ins)
         {
             try

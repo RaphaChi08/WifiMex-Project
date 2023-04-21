@@ -18,6 +18,7 @@ namespace SGMDT_Wifimex
             InitializeComponent();
             CargarTabla();
         }
+        // Metodos que cargan la tabla
         public void CargarTablaAc()
         {
             dgvEmpleados.DataSource = new DAOEmpleados().ObtenerEmpleadosActivos();
@@ -82,7 +83,7 @@ namespace SGMDT_Wifimex
             dgvEmpleados.Columns["Password"].Visible = false;
             dgvEmpleados.Columns["Estatus"].Visible = false;
         }
-
+        // Manda al formulario de agergar o modificar usuario
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAgregarModificar frm = new frmAgregarModificar(1, "0");

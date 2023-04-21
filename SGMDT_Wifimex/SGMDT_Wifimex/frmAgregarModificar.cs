@@ -28,6 +28,7 @@ namespace SGMDT_Wifimex
             {
                 this.Text = "Agregar";
             }
+            // Aquie se carga los datos para cuando se actualizan
             else if (op == 2)
             {
                 this.Text = "Modificar";

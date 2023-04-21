@@ -54,7 +54,7 @@ namespace SGMDT_Wifimex
             dgvInstalaciones.Columns["idContratos"].HeaderText = "ID Conntrato";
             dgvInstalaciones.Columns["Estatus"].Visible = false;
         }
-
+        // Manda al formulario de agregar o modificar
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAgregarModificarInsta frm = new frmAgregarModificarInsta(1, "0");

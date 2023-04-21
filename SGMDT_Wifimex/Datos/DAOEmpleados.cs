@@ -273,6 +273,7 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
+        // metodo para agregar a un empleado
         public int AgregarEmpleado(Empleados emp)
         {
             try
