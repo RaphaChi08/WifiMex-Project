@@ -59,7 +59,7 @@ namespace SGMDT_Wifimex
         {
             frmAgregarModificarInsta frm = new frmAgregarModificarInsta(1, "0");
             frm.ShowDialog();
-            if (frm.Guardado > 0)
+            if (frm.Guardado == 0)
             {
                 CargarTabla();
             }
@@ -77,6 +77,11 @@ namespace SGMDT_Wifimex
                     CargarTabla();
                 }
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CargarTablaIns();
         }
     }
 }

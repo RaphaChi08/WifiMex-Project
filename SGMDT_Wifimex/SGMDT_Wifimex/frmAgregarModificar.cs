@@ -39,10 +39,10 @@ namespace SGMDT_Wifimex
                 txtCorreo.Text = emp.Correo;
                 txtRFC.Text = emp.RFC;
                 txtCURP.Text = emp.CURP;
-                txtEdad.Text = (emp.Edad).ToString();
+                nudEdad.Text = (emp.Edad).ToString();
                 txtDireccion.Text = emp.Direccion;
                 txtTelefono.Text = emp.Telefono;
-                txtRol.Text = emp.Rol;
+                cbxRol.SelectedItem = emp.Rol;
                 dtpContrato.Enabled = false;
             }
         }
@@ -50,8 +50,8 @@ namespace SGMDT_Wifimex
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtNumEmpleado.Text.Length>0 & txtNombre.Text.Length > 0 & txtRFC.Text.Length > 0 & txtCURP.Text.Length > 0
-                & txtEdad.Text.Length > 0 & txtCorreo.Text.Length > 0 & txtDireccion.Text.Length > 0
-                & txtDireccion.Text.Length > 0 & txtRol.Text.Length > 0 & txtTelefono.Text.Length > 0)
+                & txtCorreo.Text.Length > 0 & txtDireccion.Text.Length > 0
+                & txtDireccion.Text.Length > 0  & txtTelefono.Text.Length > 0)
             {
                 if (OP == 1)
                 {
@@ -60,16 +60,16 @@ namespace SGMDT_Wifimex
                     emp.Nombrecompleto = txtNombre.Text;
                     emp.RFC = txtRFC.Text;
                     emp.CURP = txtCURP.Text;
-                    emp.Edad =  Convert.ToInt32(txtEdad.Text);
+                    emp.Edad =  Convert.ToInt32(nudEdad.Value);
                     emp.Password = txtContrasena.Text;
                     emp.Correo = txtCorreo.Text;
                     emp.Direccion = txtDireccion.Text;
-                    emp.Rol = txtRol.Text;
+                    emp.Rol = cbxRol.SelectedItem.ToString();
                     emp.Telefono = txtTelefono.Text;
                     emp.Estatus = true;
                     emp.fechaContratacion = dtpContrato.Text;
                     Guardado = new DAOEmpleados().AgregarEmpleado(emp);
-                    if (Guardado > 0)
+                    if (Guardado == 0)
                     {
                         MessageBox.Show("Usuario agregado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
@@ -86,11 +86,11 @@ namespace SGMDT_Wifimex
                     emp.Nombrecompleto = txtNombre.Text;
                     emp.RFC = txtRFC.Text;
                     emp.CURP = txtCURP.Text;
-                    emp.Edad = Convert.ToInt32(txtEdad.Text);
+                    emp.Edad = Convert.ToInt32(nudEdad.Value);
                     emp.Password = txtContrasena.Text;
                     emp.Correo = txtCorreo.Text;
                     emp.Direccion = txtDireccion.Text;
-                    emp.Rol = txtRol.Text;
+                    emp.Rol = cbxRol.SelectedItem.ToString();
                     emp.Telefono = txtTelefono.Text;
                     Modificado = new DAOEmpleados().ModificarEmpleado(emp);
                     if (Modificado)

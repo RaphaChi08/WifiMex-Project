@@ -243,7 +243,7 @@ namespace Datos
                 if (ex.Number == 1062)
                 {
                     MySqlCommand comando = new MySqlCommand(
-                        @"update instalaciones set Estatus=1 where idInstalacion=@idInstalacion and Estatus=0");
+                        @"update instalaciones set Estatus=true where idInstalacion=@idInstalacion and Estatus=false");
                     comando.Parameters.AddWithValue("@idInstalacion", ins.IdInstalacion);
                     comando.Connection = Conexion.conexion;
                     comando.Connection = Conexion.conexion;

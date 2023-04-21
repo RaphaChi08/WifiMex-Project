@@ -54,7 +54,7 @@ namespace SGMDT_Wifimex
                     Inst.Estatus = true;
                     Inst.fechaInstalacin = dtpInstalacion.Text;
                     Guardado = new DAOInstalaciones().AgregarInstlacion(Inst);
-                    if (Guardado > 0)
+                    if (Guardado == 0)
                     {
                         MessageBox.Show("Instalacion agregada correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();

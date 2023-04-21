@@ -42,8 +42,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtRFC = new System.Windows.Forms.TextBox();
             this.txtCURP = new System.Windows.Forms.TextBox();
-            this.txtEdad = new System.Windows.Forms.TextBox();
-            this.txtRol = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -52,6 +50,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cbxRol = new System.Windows.Forms.ComboBox();
+            this.nudEdad = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEdad)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -172,21 +173,6 @@
             this.txtCURP.Size = new System.Drawing.Size(183, 22);
             this.txtCURP.TabIndex = 13;
             // 
-            // txtEdad
-            // 
-            this.txtEdad.Location = new System.Drawing.Point(139, 224);
-            this.txtEdad.MaxLength = 2;
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(183, 22);
-            this.txtEdad.TabIndex = 14;
-            // 
-            // txtRol
-            // 
-            this.txtRol.Location = new System.Drawing.Point(490, 224);
-            this.txtRol.Name = "txtRol";
-            this.txtRol.Size = new System.Drawing.Size(200, 22);
-            this.txtRol.TabIndex = 19;
-            // 
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(490, 133);
@@ -252,21 +238,40 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // cbxRol
+            // 
+            this.cbxRol.FormattingEnabled = true;
+            this.cbxRol.Items.AddRange(new object[] {
+            "Jefe(a)",
+            "Instalador(a)",
+            "Secretaria(o)"});
+            this.cbxRol.Location = new System.Drawing.Point(490, 226);
+            this.cbxRol.Name = "cbxRol";
+            this.cbxRol.Size = new System.Drawing.Size(200, 24);
+            this.cbxRol.TabIndex = 25;
+            // 
+            // nudEdad
+            // 
+            this.nudEdad.Location = new System.Drawing.Point(139, 228);
+            this.nudEdad.Name = "nudEdad";
+            this.nudEdad.Size = new System.Drawing.Size(183, 22);
+            this.nudEdad.TabIndex = 26;
+            // 
             // frmAgregarModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(743, 450);
+            this.Controls.Add(this.nudEdad);
+            this.Controls.Add(this.cbxRol);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dtpContrato);
-            this.Controls.Add(this.txtRol);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtDireccion);
-            this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.txtCURP);
             this.Controls.Add(this.txtRFC);
             this.Controls.Add(this.txtNombre);
@@ -285,6 +290,7 @@
             this.MinimizeBox = false;
             this.Name = "frmAgregarModificar";
             this.Text = "Agregar / Modificar";
+            ((System.ComponentModel.ISupportInitialize)(this.nudEdad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,8 +312,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtRFC;
         private System.Windows.Forms.TextBox txtCURP;
-        private System.Windows.Forms.TextBox txtEdad;
-        private System.Windows.Forms.TextBox txtRol;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtDireccion;
@@ -316,5 +320,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cbxRol;
+        private System.Windows.Forms.NumericUpDown nudEdad;
     }
 }

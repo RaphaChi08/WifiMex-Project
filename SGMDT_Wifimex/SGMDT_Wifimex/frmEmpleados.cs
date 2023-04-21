@@ -87,7 +87,7 @@ namespace SGMDT_Wifimex
         {
             frmAgregarModificar frm = new frmAgregarModificar(1, "0");
             frm.ShowDialog();
-            if (frm.Guardado > 0)
+            if (frm.Guardado == 0)
             {
                 CargarTabla();
             }
