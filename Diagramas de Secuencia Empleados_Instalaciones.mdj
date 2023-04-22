@@ -44,9 +44,9 @@
 												"$ref": "AAAAAAGGgOul3uvsBwU="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
+											"left": 30.55908203125,
 											"top": 13,
-											"width": 32.80810546875,
+											"width": 32.052734375,
 											"height": 13,
 											"text": "Login"
 										},
@@ -59,7 +59,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 13,
-											"width": 14.72998046875,
+											"width": 12.55908203125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -93,9 +93,9 @@
 												"$ref": "AAAAAAGGgOzVdOwVJ1Y="
 											},
 											"font": "Arial;13;0",
-											"left": 39.9599609375,
+											"left": 36.3291015625,
 											"top": 37,
-											"width": 68.9326171875,
+											"width": 64.54638671875,
 											"height": 13,
 											"text": "Condicional"
 										},
@@ -108,7 +108,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 37,
-											"width": 21.9599609375,
+											"width": 18.3291015625,
 											"height": 13,
 											"text": "seq"
 										},
@@ -1979,9 +1979,9 @@
 												"$ref": "AAAAAAGGgOwXBuwEDPw="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
+											"left": 30.55908203125,
 											"top": 13,
-											"width": 136.12890625,
+											"width": 121.58642578125,
 											"height": 13,
 											"text": "Registro de Empleados"
 										},
@@ -1994,7 +1994,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 13,
-											"width": 14.72998046875,
+											"width": 12.55908203125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -2028,9 +2028,9 @@
 												"$ref": "AAAAAAGGgPOzTO2LbDE="
 											},
 											"font": "Arial;13;0",
-											"left": 39.9599609375,
+											"left": 36.3291015625,
 											"top": 37,
-											"width": 68.9326171875,
+											"width": 64.54638671875,
 											"height": 13,
 											"text": "Condicional"
 										},
@@ -2043,7 +2043,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 37,
-											"width": 21.9599609375,
+											"width": 18.3291015625,
 											"height": 13,
 											"text": "seq"
 										},
@@ -5742,9 +5742,9 @@
 												"$ref": "AAAAAAGGgQKN5/A86Xk="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
+											"left": 30.55908203125,
 											"top": 5,
-											"width": 157.81884765625,
+											"width": 144.66015625,
 											"height": 13,
 											"text": "Actualizacion de Empleado"
 										},
@@ -5757,7 +5757,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 5,
-											"width": 14.72998046875,
+											"width": 12.55908203125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -5790,9 +5790,9 @@
 												"$ref": "AAAAAAGGgQOynPBReKo="
 											},
 											"font": "Arial;13;0",
-											"left": 39.9599609375,
+											"left": 36.3291015625,
 											"top": 29,
-											"width": 123.1162109375,
+											"width": 111.4873046875,
 											"height": 13,
 											"text": "CombinedFragment1"
 										},
@@ -5805,7 +5805,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 29,
-											"width": 21.9599609375,
+											"width": 18.3291015625,
 											"height": 13,
 											"text": "seq"
 										},
@@ -9462,9 +9462,9 @@
 												"$ref": "AAAAAAGGgRDbePL52VE="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
+											"left": 30.55908203125,
 											"top": 13,
-											"width": 138.33154296875,
+											"width": 121.57373046875,
 											"height": 13,
 											"text": "Busqueda de empleado"
 										},
@@ -9477,7 +9477,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 13,
-											"width": 14.72998046875,
+											"width": 12.55908203125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -9511,9 +9511,9 @@
 												"$ref": "AAAAAAGGgRFVDfMJtbM="
 											},
 											"font": "Arial;13;0",
-											"left": 39.9599609375,
+											"left": 36.3291015625,
 											"top": 37,
-											"width": 68.9326171875,
+											"width": 64.54638671875,
 											"height": 13,
 											"text": "Condicional"
 										},
@@ -9526,7 +9526,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 37,
-											"width": 21.9599609375,
+											"width": 18.3291015625,
 											"height": 13,
 											"text": "seq"
 										},
@@ -18485,9 +18485,9 @@
 												"$ref": "AAAAAAGGgUCprfo1j1k="
 											},
 											"font": "Arial;13;0",
-											"left": 22.55908203125,
+											"left": 24.72998046875,
 											"top": 13,
-											"width": 148.9892578125,
+											"width": 161.4306640625,
 											"height": 13,
 											"text": "Actualizacion de Instalacion"
 										},
@@ -18500,7 +18500,7 @@
 											"font": "Arial;13;1",
 											"left": 5,
 											"top": 13,
-											"width": 12.55908203125,
+											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
@@ -18533,9 +18533,9 @@
 												"$ref": "AAAAAAGGgUHzT/pNqBs="
 											},
 											"font": "Arial;13;0",
-											"left": 36.3291015625,
+											"left": 39.9599609375,
 											"top": 37,
-											"width": 64.54638671875,
+											"width": 68.9326171875,
 											"height": 13,
 											"text": "Condicional"
 										},
@@ -18548,7 +18548,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 37,
-											"width": 18.3291015625,
+											"width": 21.9599609375,
 											"height": 13,
 											"text": "seq"
 										},
@@ -19166,7 +19166,7 @@
 												"$ref": "AAAAAAGGgUOrUfry5ag="
 											},
 											"edgePosition": 1,
-											"text": "1 : Indica que la instalacion fue finalizada"
+											"text": "1 : Indica que los datos de la instalacion se modificaran"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -19267,9 +19267,9 @@
 												"$ref": "AAAAAAGGgUSxv/sKWuE="
 											},
 											"font": "Arial;13;0",
-											"left": 183,
+											"left": 180,
 											"top": 151,
-											"width": 280.388671875,
+											"width": 286.89501953125,
 											"height": 13,
 											"alpha": -1.1071495177944106,
 											"distance": 11.180339887498949,
@@ -19277,7 +19277,7 @@
 												"$ref": "AAAAAAGGgUSxv/sLw8I="
 											},
 											"edgePosition": 1,
-											"text": "2 : PIde su numro de empleado o ID del contrato"
+											"text": "2 : Pide su numero de empleado o ID del contrato"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -20271,9 +20271,9 @@
 												"$ref": "AAAAAAGGgWEJG/vM7+0="
 											},
 											"font": "Arial;13;0",
-											"left": 200,
+											"left": 159,
 											"top": 447,
-											"width": 244.27685546875,
+											"width": 327.8564453125,
 											"height": 13,
 											"alpha": -4.171970215408548,
 											"distance": 11.661903789690601,
@@ -20281,7 +20281,7 @@
 												"$ref": "AAAAAAGGgWEJG/vNjxc="
 											},
 											"edgePosition": 1,
-											"text": "11 : Indica que la instalacion fue finalizada"
+											"text": "11 : Indica que los datos de la instalacion se actualizaran"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -20382,9 +20382,9 @@
 												"$ref": "AAAAAAGGgWFFefvkiGA="
 											},
 											"font": "Arial;13;0",
-											"left": 182,
+											"left": 178,
 											"top": 503,
-											"width": 287.61865234375,
+											"width": 294.125,
 											"height": 13,
 											"alpha": -1.4219068681829903,
 											"distance": 20.223748416156685,
@@ -20392,7 +20392,7 @@
 												"$ref": "AAAAAAGGgWFFefvlNvM="
 											},
 											"edgePosition": 1,
-											"text": "12 : PIde su numro de empleado o ID del contrato"
+											"text": "12 : Pide su numero de empleado o ID del contrato"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -21386,9 +21386,9 @@
 												"$ref": "AAAAAAGGgWS/Y/yskmM="
 											},
 											"font": "Arial;13;0",
-											"left": 206,
+											"left": 164,
 											"top": 728,
-											"width": 244.27685546875,
+											"width": 328.8212890625,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 10,
@@ -21396,7 +21396,7 @@
 												"$ref": "AAAAAAGGgWS/Y/ytF90="
 											},
 											"edgePosition": 1,
-											"text": "21 : Indica que la instalacion fue finalizada"
+											"text": "21 : Indica que los datos de la instalacion se actualizaran"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -21497,9 +21497,9 @@
 												"$ref": "AAAAAAGGgWUS9PzCPdg="
 											},
 											"font": "Arial;13;0",
-											"left": 184,
+											"left": 180,
 											"top": 771,
-											"width": 287.61865234375,
+											"width": 294.8486328125,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 10,
@@ -21507,7 +21507,7 @@
 												"$ref": "AAAAAAGGgWUS9fzDp1s="
 											},
 											"edgePosition": 1,
-											"text": "22 : PIde su numro de empleado o ID del contrato"
+											"text": "22 : PIde su numero de empleado o ID del contrato"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -21946,7 +21946,7 @@
 									"top": 536,
 									"width": 60,
 									"height": 38,
-									"text": "Flujo altrno"
+									"text": "Flujo alterno"
 								},
 								{
 									"_type": "UMLTextView",
@@ -22195,7 +22195,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGGgUCprPoz2u4="
 							},
-							"name": "Indica que la instalacion fue finalizada",
+							"name": "Indica que los datos de la instalacion se modificaran",
 							"source": {
 								"$ref": "AAAAAAGGgULy8Ppya0Y="
 							},
@@ -22209,7 +22209,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGGgUCprPoz2u4="
 							},
-							"name": "PIde su numro de empleado o ID del contrato",
+							"name": "Pide su numero de empleado o ID del contrato",
 							"source": {
 								"$ref": "AAAAAAGGgUMAwPqRy2I="
 							},
@@ -22341,7 +22341,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGGgUCprPoz2u4="
 							},
-							"name": "Indica que la instalacion fue finalizada",
+							"name": "Indica que los datos de la instalacion se actualizaran",
 							"source": {
 								"$ref": "AAAAAAGGgULy8Ppya0Y="
 							},
@@ -22355,7 +22355,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGGgUCprPoz2u4="
 							},
-							"name": "PIde su numro de empleado o ID del contrato",
+							"name": "Pide su numero de empleado o ID del contrato",
 							"source": {
 								"$ref": "AAAAAAGGgUMAwPqRy2I="
 							},
@@ -22487,7 +22487,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGGgUCprPoz2u4="
 							},
-							"name": "Indica que la instalacion fue finalizada",
+							"name": "Indica que los datos de la instalacion se actualizaran",
 							"source": {
 								"$ref": "AAAAAAGGgULy8Ppya0Y="
 							},
@@ -22501,7 +22501,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGGgUCprPoz2u4="
 							},
-							"name": "PIde su numro de empleado o ID del contrato",
+							"name": "PIde su numero de empleado o ID del contrato",
 							"source": {
 								"$ref": "AAAAAAGGgUMAwPqRy2I="
 							},
