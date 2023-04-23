@@ -334,7 +334,7 @@ namespace Datos
                 {
                     MySqlCommand comando = new MySqlCommand(
                     "update empleados set nomEmpleados=@name,RFC=@RFC,CURP=@CURP,Edad=@Edad,Direccion=@direccion,Telefono=@telefono," +
-                    "Correo=@correo,Rol=@rol where idEmpleado=@idEmpleado");
+                    "Correo=@correo,Rol=@rol, Estatus=true where idEmpleado=@idEmpleado");
                     comando.Parameters.AddWithValue("@idEmpleado", emp.Idempleado);
                     comando.Parameters.AddWithValue("@name", emp.Nombrecompleto);
                     comando.Parameters.AddWithValue("@RFC", emp.RFC);
