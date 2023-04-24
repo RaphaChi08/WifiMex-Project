@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtBus = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.txtBus = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -50,6 +50,7 @@
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvClientes.Location = new System.Drawing.Point(3, 52);
+            this.dgvClientes.MultiSelect = false;
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
@@ -78,28 +79,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1304, 46);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // txtBus
-            // 
-            this.txtBus.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtBus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBus.Location = new System.Drawing.Point(1052, 12);
-            this.txtBus.Name = "txtBus";
-            this.txtBus.Size = new System.Drawing.Size(249, 22);
-            this.txtBus.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.txtBus, "Ingrese por lo menos 4 caracteres");
-            this.txtBus.TextChanged += new System.EventHandler(this.txtBus_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(997, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Buscar";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // btnModify
             // 
@@ -130,6 +109,28 @@
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // txtBus
+            // 
+            this.txtBus.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtBus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBus.Location = new System.Drawing.Point(1052, 12);
+            this.txtBus.Name = "txtBus";
+            this.txtBus.Size = new System.Drawing.Size(249, 22);
+            this.txtBus.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.txtBus, "Ingrese por lo menos 4 caracteres");
+            this.txtBus.TextChanged += new System.EventHandler(this.txtBus_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(997, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Buscar";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // btnAdd
             // 

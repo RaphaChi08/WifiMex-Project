@@ -24,6 +24,8 @@ namespace SGMDT_Wifimex
             cbxEmpleado.DataSource = new DAOEmpleados().ObtenerEmpleados();
             cbxEmpleado.DisplayMember = "nomEmpleados";
             cbxEmpleado.ValueMember = "idEmpleado";
+            cbxEmpleado.SelectedIndex= 0;
+            
 
             //cbxBarra.DataSource = new DAOProductos().ObtenerTodos();
             //cbxBarra.DisplayMember = "nomCliente";
@@ -54,6 +56,11 @@ namespace SGMDT_Wifimex
                 default:
                     break;
             }
+        }
+
+        private void btnAcep_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

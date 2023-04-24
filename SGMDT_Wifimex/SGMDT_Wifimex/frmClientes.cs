@@ -30,7 +30,7 @@ namespace SGMDT_Wifimex
         {
             frmAddModyCliente frm = new frmAddModyCliente("", 1);
             frm.ShowDialog();
-            if (frm.modificado)
+            if (frm.Agregado>0)
             {
                 cargarTabla();
             }

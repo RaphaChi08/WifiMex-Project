@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbxEstatus = new System.Windows.Forms.GroupBox();
             this.rbInactivo = new System.Windows.Forms.RadioButton();
             this.rbActivo = new System.Windows.Forms.RadioButton();
@@ -39,10 +40,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCant = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAcep = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxEstatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxEstatus
@@ -82,12 +85,14 @@
             // txtClave
             // 
             this.txtClave.Location = new System.Drawing.Point(159, 29);
+            this.txtClave.MaxLength = 10;
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(315, 22);
             this.txtClave.TabIndex = 10;
             // 
             // cbxBarra
             // 
+            this.cbxBarra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBarra.FormattingEnabled = true;
             this.cbxBarra.Location = new System.Drawing.Point(167, 86);
             this.cbxBarra.Name = "cbxBarra";
@@ -96,6 +101,7 @@
             // 
             // cbxEmpleado
             // 
+            this.cbxEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEmpleado.FormattingEnabled = true;
             this.cbxEmpleado.Location = new System.Drawing.Point(200, 116);
             this.cbxEmpleado.Name = "cbxEmpleado";
@@ -141,27 +147,42 @@
             // txtCant
             // 
             this.txtCant.Location = new System.Drawing.Point(200, 58);
+            this.txtCant.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.txtCant.Name = "txtCant";
             this.txtCant.Size = new System.Drawing.Size(273, 22);
             this.txtCant.TabIndex = 18;
+            this.txtCant.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.Location = new System.Drawing.Point(58, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(58, 231);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(161, 23);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnAcep
             // 
-            this.button2.Location = new System.Drawing.Point(312, 231);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 23);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAcep.Location = new System.Drawing.Point(312, 231);
+            this.btnAcep.Name = "btnAcep";
+            this.btnAcep.Size = new System.Drawing.Size(161, 23);
+            this.btnAcep.TabIndex = 20;
+            this.btnAcep.Text = "Aceptar";
+            this.btnAcep.UseVisualStyleBackColor = true;
+            this.btnAcep.Click += new System.EventHandler(this.btnAcep_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAddModyAlmacen
             // 
@@ -169,8 +190,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(524, 269);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAcep);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtCant);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -185,6 +206,7 @@
             this.gbxEstatus.ResumeLayout(false);
             this.gbxEstatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +225,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown txtCant;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAcep;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtIdCo = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.dtpIni = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +44,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxEstatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIdCo
@@ -57,9 +60,11 @@
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(143, 71);
+            this.txtPrecio.MaxLength = 6;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(279, 22);
             this.txtPrecio.TabIndex = 1;
+            this.txtPrecio.Text = "0";
             // 
             // dtpIni
             // 
@@ -77,6 +82,7 @@
             // 
             // cbxCliente
             // 
+            this.cbxCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCliente.FormattingEnabled = true;
             this.cbxCliente.Location = new System.Drawing.Point(143, 158);
             this.cbxCliente.Name = "cbxCliente";
@@ -182,6 +188,10 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmAddModyContratos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,6 +215,7 @@
             this.Text = "frmAddModyContratos";
             this.gbxEstatus.ResumeLayout(false);
             this.gbxEstatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +238,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

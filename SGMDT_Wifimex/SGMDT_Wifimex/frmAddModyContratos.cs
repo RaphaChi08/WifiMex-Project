@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Datos;
@@ -17,6 +18,42 @@ namespace SGMDT_Wifimex
         public Boolean modificado;
         public int Agregado;
 
+        public bool Verificar()
+        {
+
+            if (!Regex.IsMatch(txtIdCo.Text, "^[A-Za-z]{4}[0-9]{6}$"))
+            {
+                errorProvider1.SetError(txtIdCo, "El formato debe contener 4 letras y 6 numeros en este orden");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtPrecio.Text, "^[0-9]{1,3}([.][0-9]{1,2})?$"))
+            {
+                errorProvider1.SetError(txtPrecio, "El valor debe ser menor o igual a 999.99");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            };
+
+            if (dtpFin.Value<dtpIni.Value)
+            {
+                errorProvider1.SetError(dtpFin, "La fecha de fin debe de ser despues de la de inicio");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+
+            return true;
+
+        }
 
         private int opcion;
         public frmAddModyContratos(string ID, int Opcion)
@@ -25,12 +62,14 @@ namespace SGMDT_Wifimex
             cbxCliente.DataSource = new DAOCliente().ObtenerTodos();
             cbxCliente.DisplayMember= "nomCliente";
             cbxCliente.ValueMember= "idCLiente";
+            
             opcion= Opcion;
             switch (Opcion)
             {
                 case 1:
                     this.Text = "Agregar";
                     gbxEstatus.Enabled = false;
+                    cbxCliente.SelectedIndex = 0;
                     break;
                 case 2:
                     this.Text = "Actualizar";
@@ -42,7 +81,6 @@ namespace SGMDT_Wifimex
                     dtpIni.Text = con.inicioContrato.ToString();
                     dtpFin.Text = con.finContrato.ToString();
                     cbxCliente.SelectedValue = con.idCliente.ToString();
-                    Console.WriteLine(con.Estatus.ToString());
                     if (con.Estatus.ToString() == "Activo")
                     { rbActivo.Checked = true; }
                     else if (con.Estatus.ToString() == "Inactivo")
@@ -56,44 +94,58 @@ namespace SGMDT_Wifimex
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (opcion==1)
+            try
             {
-                Contrato con = new Contrato();
-                con.idContrato= txtIdCo.Text;
-                con.precioServicio = double.Parse(txtPrecio.Text);
-                con.inicioContrato= dtpIni.Text;
-                con.idCliente = cbxCliente.SelectedValue.ToString();
-                con.finContrato= dtpFin.Text;
-                Agregado = new DAOContratos().agregar(con);
-                if (Agregado > 0)
+                if (opcion == 1)
                 {
-                    MessageBox.Show("Contrato Agregado con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    Contrato con = new Contrato();
+                    con.idContrato = txtIdCo.Text;
+                    con.precioServicio = double.Parse(txtPrecio.Text);
+                    con.inicioContrato = dtpIni.Text;
+                    con.idCliente = cbxCliente.SelectedValue.ToString();
+                    con.finContrato = dtpFin.Text;
+                    if (Verificar())
+                    {
+                        Agregado = new DAOContratos().agregar(con);
+                        if (Agregado > 0)
+                        {
+                            MessageBox.Show("Contrato Agregado con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El contrato no se a podido agregar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("El contrato no se a podido agregar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Contrato con = new Contrato();
+                    con.idContrato = txtIdCo.Text;
+                    con.precioServicio = double.Parse(txtPrecio.Text);
+                    con.inicioContrato = dtpIni.Text;
+                    con.idCliente = cbxCliente.SelectedValue.ToString();
+                    con.finContrato = dtpFin.Text;
+                    con.Estatus = rbActivo.Checked == true ? "Activo" : "Inactivo";
+                    if (Verificar())
+                    {
+                        modificado = new DAOContratos().editar(con);
+                        if (modificado)
+                        {
+                            MessageBox.Show("Contrato modificado con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El contrato no se a podido modificar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Contrato con = new Contrato();
-                con.idContrato = txtIdCo.Text;
-                con.precioServicio = double.Parse(txtPrecio.Text);
-                con.inicioContrato = dtpIni.Text;
-                con.idCliente = cbxCliente.SelectedValue.ToString();
-                con.finContrato = dtpFin.Text;
-                con.Estatus = rbActivo.Checked == true ? "Activo" : "Inactivo";
-                modificado = new DAOContratos().editar(con);
-                if (modificado)
-                {
-                    MessageBox.Show("Contrato modificado con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("El contrato no se a podido modificar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+
+                MessageBox.Show(ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

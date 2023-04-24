@@ -137,6 +137,7 @@
             this.dgvContratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContratos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvContratos.Location = new System.Drawing.Point(3, 64);
+            this.dgvContratos.MultiSelect = false;
             this.dgvContratos.Name = "dgvContratos";
             this.dgvContratos.RowHeadersWidth = 51;
             this.dgvContratos.RowTemplate.Height = 24;

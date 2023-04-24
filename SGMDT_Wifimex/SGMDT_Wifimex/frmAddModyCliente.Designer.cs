@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtRfc = new System.Windows.Forms.TextBox();
             this.txtCurp = new System.Windows.Forms.TextBox();
@@ -36,8 +37,8 @@
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtCorr = new System.Windows.Forms.TextBox();
             this.gbxEstatus = new System.Windows.Forms.GroupBox();
-            this.rbActivo = new System.Windows.Forms.RadioButton();
             this.rbInactivo = new System.Windows.Forms.RadioButton();
+            this.rbActivo = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,12 +48,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxEstatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(142, 18);
+            this.txtId.MaxLength = 10;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(258, 22);
             this.txtId.TabIndex = 0;
@@ -60,6 +64,7 @@
             // txtRfc
             // 
             this.txtRfc.Location = new System.Drawing.Point(142, 46);
+            this.txtRfc.MaxLength = 13;
             this.txtRfc.Name = "txtRfc";
             this.txtRfc.Size = new System.Drawing.Size(258, 22);
             this.txtRfc.TabIndex = 1;
@@ -67,6 +72,7 @@
             // txtCurp
             // 
             this.txtCurp.Location = new System.Drawing.Point(142, 74);
+            this.txtCurp.MaxLength = 18;
             this.txtCurp.Name = "txtCurp";
             this.txtCurp.Size = new System.Drawing.Size(258, 22);
             this.txtCurp.TabIndex = 2;
@@ -74,6 +80,7 @@
             // txtNom
             // 
             this.txtNom.Location = new System.Drawing.Point(142, 102);
+            this.txtNom.MaxLength = 50;
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(258, 22);
             this.txtNom.TabIndex = 3;
@@ -81,6 +88,7 @@
             // txtDir
             // 
             this.txtDir.Location = new System.Drawing.Point(142, 130);
+            this.txtDir.MaxLength = 100;
             this.txtDir.Name = "txtDir";
             this.txtDir.Size = new System.Drawing.Size(258, 22);
             this.txtDir.TabIndex = 4;
@@ -88,6 +96,7 @@
             // txtTel
             // 
             this.txtTel.Location = new System.Drawing.Point(142, 158);
+            this.txtTel.MaxLength = 10;
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(258, 22);
             this.txtTel.TabIndex = 5;
@@ -95,6 +104,7 @@
             // txtCorr
             // 
             this.txtCorr.Location = new System.Drawing.Point(142, 186);
+            this.txtCorr.MaxLength = 100;
             this.txtCorr.Name = "txtCorr";
             this.txtCorr.Size = new System.Drawing.Size(258, 22);
             this.txtCorr.TabIndex = 6;
@@ -111,6 +121,16 @@
             this.gbxEstatus.TabStop = false;
             this.gbxEstatus.Text = "Estatus";
             // 
+            // rbInactivo
+            // 
+            this.rbInactivo.AutoSize = true;
+            this.rbInactivo.Location = new System.Drawing.Point(115, 21);
+            this.rbInactivo.Name = "rbInactivo";
+            this.rbInactivo.Size = new System.Drawing.Size(74, 20);
+            this.rbInactivo.TabIndex = 1;
+            this.rbInactivo.Text = "Inactivo";
+            this.rbInactivo.UseVisualStyleBackColor = true;
+            // 
             // rbActivo
             // 
             this.rbActivo.AutoSize = true;
@@ -122,16 +142,6 @@
             this.rbActivo.TabStop = true;
             this.rbActivo.Text = "Activo";
             this.rbActivo.UseVisualStyleBackColor = true;
-            // 
-            // rbInactivo
-            // 
-            this.rbInactivo.AutoSize = true;
-            this.rbInactivo.Location = new System.Drawing.Point(115, 21);
-            this.rbInactivo.Name = "rbInactivo";
-            this.rbInactivo.Size = new System.Drawing.Size(74, 20);
-            this.rbInactivo.TabIndex = 1;
-            this.rbInactivo.Text = "Inactivo";
-            this.rbInactivo.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -216,12 +226,16 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmAddModyCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(425, 361);
+            this.ClientSize = new System.Drawing.Size(440, 361);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
@@ -243,6 +257,7 @@
             this.Text = "frmAddModyCliente";
             this.gbxEstatus.ResumeLayout(false);
             this.gbxEstatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,5 +284,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

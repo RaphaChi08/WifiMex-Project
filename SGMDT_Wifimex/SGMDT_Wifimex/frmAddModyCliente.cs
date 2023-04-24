@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,76 @@ namespace SGMDT_Wifimex
         public Boolean modificado;
         public int Agregado;
 
+        private bool resp=false;
+        public bool Verificar()
+        {
+            if (!Regex.IsMatch(txtId.Text, "^[A-Za-z]{4}[0-9]{6}$"))
+            {
+                errorProvider1.SetError(txtId, "El formato debe contener 4 letras y 6 numeros en este orden");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtRfc.Text, @"^[A-Z]{4}\d{6}([A-Z0-9]{2}[A-Z0-9]{1})?$"))
+            {
+                errorProvider1.SetError(txtRfc, "Verifique que su RFC este correcto");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtCurp.Text, @"^[A-Z]{4}\d{6}[HM][A-Z]{5}[A-Z0-9]{2}$"))
+            {
+                errorProvider1.SetError(txtCurp, "Verifique que su CURP cumpla con el formato requerido");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtNom.Text, @"^[A-Za-z][A-Za-z .]{1,}[A-Za-z]$"))
+            {
+                errorProvider1.SetError(txtNom, "El nombre no puede contener números o caracteres especiales");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtDir.Text, @"^[A-Za-z][A-Za-z .]{1,}\s+#\d+(-\d+)?$"))
+            {
+                errorProvider1.SetError(txtDir, "Siga al formato adecuado , ejemplo : 'Calle #123', en caso de ser departamento agregue '-Número interior'");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtTel.Text, @"^[0-9]{10}?$"))
+            {
+                errorProvider1.SetError(txtTel, "Verifique el número contenga 10 dígitos");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtCorr.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+            {
+                errorProvider1.SetError(txtCorr, "Verifique en correo este correctamente escrito y sin espacios");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+
+            return true;
+        }
 
         private int opcion;
         public frmAddModyCliente(string ID, int Opcion)
@@ -56,48 +127,62 @@ namespace SGMDT_Wifimex
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (opcion==1)
+            try
             {
-                Cliente cli = new Cliente();
-                cli.idCliente = txtId.Text;
-                cli.RFC = txtRfc.Text;
-                cli.CURP = txtCurp.Text;
-                cli.nomCliente = txtNom.Text;
-                cli.Direccion = txtDir.Text;
-                cli.Telefono = txtTel.Text;
-                cli.Correo = txtCorr.Text;
-                Agregado = new DAOCliente().agregar(cli);
-                if (Agregado > 0)
+                if (opcion == 1)
                 {
-                    MessageBox.Show("Cliente Agregado con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    Cliente cli = new Cliente();
+                    cli.idCliente = txtId.Text;
+                    cli.RFC = txtRfc.Text;
+                    cli.CURP = txtCurp.Text;
+                    cli.nomCliente = txtNom.Text;
+                    cli.Direccion = txtDir.Text;
+                    cli.Telefono = txtTel.Text;
+                    cli.Correo = txtCorr.Text;
+                    if (Verificar())
+                    {
+                        Agregado = new DAOCliente().agregar(cli);
+                        if (Agregado > 0)
+                        {
+                            MessageBox.Show("Cliente Agregado con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El cliente no se a podido agregar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("El cliente no se a podido agregar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Cliente cli = new Cliente();
+                    cli.idCliente = txtId.Text;
+                    cli.RFC = txtRfc.Text;
+                    cli.CURP = txtCurp.Text;
+                    cli.nomCliente = txtNom.Text;
+                    cli.Direccion = txtDir.Text;
+                    cli.Telefono = txtTel.Text;
+                    cli.Correo = txtCorr.Text;
+                    cli.Estatus = rbActivo.Checked == true ? "Activo" : "Inactivo";
+                    if (Verificar())
+                    {
+                        modificado = new DAOCliente().editar(cli);
+                        if (modificado)
+                        {
+                            MessageBox.Show("Cliente modificado con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El cliente no se a podido modificar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Cliente cli = new Cliente();
-                cli.idCliente = txtId.Text;
-                cli.RFC = txtRfc.Text;
-                cli.CURP = txtCurp.Text;
-                cli.nomCliente = txtNom.Text;
-                cli.Direccion = txtDir.Text;
-                cli.Telefono = txtTel.Text;
-                cli.Correo = txtCorr.Text;
-                cli.Estatus = rbActivo.Checked==true? "Activo":"Inactivo";
-                modificado = new DAOCliente().editar(cli);
-                if (modificado)
-                {
-                    MessageBox.Show("Cliente modificado con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("El cliente no se a podido modificar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+
+                MessageBox.Show(ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
