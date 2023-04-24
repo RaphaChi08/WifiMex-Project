@@ -70,6 +70,18 @@
     <Compile Include="frmAddModyContratos.Designer.cs">
       <DependentUpon>frmAddModyContratos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgregar-ModificarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregar-ModificarProductos.designer.cs">
+      <DependentUpon>frmAgregar-ModificarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregar-ModificarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregar-ModificarProveedores.designer.cs">
+      <DependentUpon>frmAgregar-ModificarProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgregarModificar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,18 @@
     <Compile Include="frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductos.designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProveedores.designer.cs">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -131,6 +155,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddModyContratos.resx">
       <DependentUpon>frmAddModyContratos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregar-ModificarProductos.resx">
+      <DependentUpon>frmAgregar-ModificarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregar-ModificarProveedores.resx">
+      <DependentUpon>frmAgregar-ModificarProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarModificar.resx">
       <DependentUpon>frmAgregarModificar.cs</DependentUpon>
@@ -155,6 +185,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProveedores.resx">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -197,6 +233,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton-guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -82,6 +82,8 @@
     <Compile Include="DAOContratos.cs" />
     <Compile Include="DAOEmpleados.cs" />
     <Compile Include="DAOInstalaciones.cs" />
+    <Compile Include="DAOProductos.cs" />
+    <Compile Include="DAOProveedores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

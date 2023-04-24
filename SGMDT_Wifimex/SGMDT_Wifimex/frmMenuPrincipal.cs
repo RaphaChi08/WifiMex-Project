@@ -49,6 +49,18 @@ namespace SGMDT_Wifimex
             frm.Show();
         }
 
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            frmProductos frm = new frmProductos();
+            frm.Show();
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            frmProveedores frm = new frmProveedores();
+            frm.Show();
+        }
+
         public frmMenuPrincipal(string idempleado, string nombrecompleto)
         {
             InitializeComponent();

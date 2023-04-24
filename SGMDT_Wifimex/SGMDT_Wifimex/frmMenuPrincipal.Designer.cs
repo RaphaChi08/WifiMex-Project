@@ -39,9 +39,10 @@
             // 
             // btnEmpleados
             // 
-            this.btnEmpleados.Location = new System.Drawing.Point(65, 48);
+            this.btnEmpleados.Location = new System.Drawing.Point(49, 39);
+            this.btnEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(145, 23);
+            this.btnEmpleados.Size = new System.Drawing.Size(109, 19);
             this.btnEmpleados.TabIndex = 0;
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // 
             // btnInstalaciones
             // 
-            this.btnInstalaciones.Location = new System.Drawing.Point(449, 48);
+            this.btnInstalaciones.Location = new System.Drawing.Point(337, 39);
+            this.btnInstalaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInstalaciones.Name = "btnInstalaciones";
-            this.btnInstalaciones.Size = new System.Drawing.Size(145, 23);
+            this.btnInstalaciones.Size = new System.Drawing.Size(109, 19);
             this.btnInstalaciones.TabIndex = 1;
             this.btnInstalaciones.Text = "Instalaciones";
             this.btnInstalaciones.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@
             // 
             // btnContratos
             // 
-            this.btnContratos.Location = new System.Drawing.Point(65, 197);
+            this.btnContratos.Location = new System.Drawing.Point(49, 160);
+            this.btnContratos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnContratos.Name = "btnContratos";
-            this.btnContratos.Size = new System.Drawing.Size(145, 23);
+            this.btnContratos.Size = new System.Drawing.Size(109, 19);
             this.btnContratos.TabIndex = 2;
             this.btnContratos.Text = "Contratos";
             this.btnContratos.UseVisualStyleBackColor = true;
@@ -69,18 +72,21 @@
             // 
             // btnProductos
             // 
-            this.btnProductos.Location = new System.Drawing.Point(261, 117);
+            this.btnProductos.Location = new System.Drawing.Point(196, 95);
+            this.btnProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(145, 23);
+            this.btnProductos.Size = new System.Drawing.Size(109, 19);
             this.btnProductos.TabIndex = 3;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // btnClientes
             // 
-            this.btnClientes.Location = new System.Drawing.Point(65, 117);
+            this.btnClientes.Location = new System.Drawing.Point(49, 95);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(145, 23);
+            this.btnClientes.Size = new System.Drawing.Size(109, 19);
             this.btnClientes.TabIndex = 4;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
@@ -88,18 +94,21 @@
             // 
             // btnProveedores
             // 
-            this.btnProveedores.Location = new System.Drawing.Point(449, 197);
+            this.btnProveedores.Location = new System.Drawing.Point(337, 160);
+            this.btnProveedores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(145, 23);
+            this.btnProveedores.Size = new System.Drawing.Size(109, 19);
             this.btnProveedores.TabIndex = 5;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // btnAlmacen
             // 
-            this.btnAlmacen.Location = new System.Drawing.Point(449, 117);
+            this.btnAlmacen.Location = new System.Drawing.Point(337, 95);
+            this.btnAlmacen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAlmacen.Name = "btnAlmacen";
-            this.btnAlmacen.Size = new System.Drawing.Size(145, 23);
+            this.btnAlmacen.Size = new System.Drawing.Size(109, 19);
             this.btnAlmacen.TabIndex = 6;
             this.btnAlmacen.Text = "Almacen";
             this.btnAlmacen.UseVisualStyleBackColor = true;
@@ -107,9 +116,9 @@
             // 
             // frmMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnAlmacen);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnClientes);
@@ -117,6 +126,7 @@
             this.Controls.Add(this.btnContratos);
             this.Controls.Add(this.btnInstalaciones);
             this.Controls.Add(this.btnEmpleados);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMenuPrincipal";
             this.Text = "frmMenuPrincipal";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMenuPrincipal_FormClosed);
