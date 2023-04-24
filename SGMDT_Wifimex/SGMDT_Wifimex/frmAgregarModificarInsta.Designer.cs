@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,6 +39,8 @@
             this.dtpInstalacion = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,6 +82,7 @@
             // txtInstalacion
             // 
             this.txtInstalacion.Location = new System.Drawing.Point(214, 78);
+            this.txtInstalacion.MaxLength = 10;
             this.txtInstalacion.Name = "txtInstalacion";
             this.txtInstalacion.Size = new System.Drawing.Size(200, 22);
             this.txtInstalacion.TabIndex = 4;
@@ -86,6 +90,7 @@
             // txtContrato
             // 
             this.txtContrato.Location = new System.Drawing.Point(214, 159);
+            this.txtContrato.MaxLength = 10;
             this.txtContrato.Name = "txtContrato";
             this.txtContrato.Size = new System.Drawing.Size(200, 22);
             this.txtContrato.TabIndex = 5;
@@ -93,6 +98,7 @@
             // txtEmpleado
             // 
             this.txtEmpleado.Location = new System.Drawing.Point(214, 121);
+            this.txtEmpleado.MaxLength = 10;
             this.txtEmpleado.Name = "txtEmpleado";
             this.txtEmpleado.Size = new System.Drawing.Size(200, 22);
             this.txtEmpleado.TabIndex = 6;
@@ -124,6 +130,10 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmAgregarModificarInsta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -141,6 +151,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmAgregarModificarInsta";
             this.Text = "frmAgregarModificarInsta";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +169,6 @@
         private System.Windows.Forms.DateTimePicker dtpInstalacion;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

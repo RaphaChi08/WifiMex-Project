@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +20,40 @@ namespace SGMDT_Wifimex
         private string ID;
         public int Guardado { get; set; }
         public bool Modificado { get; set; }
+
+        public bool Verificar()
+        {
+            if (!Regex.IsMatch(txtInstalacion.Text, "^[A-Za-z]{4}[0-9]{6}$"))
+            {
+                errorProvider1.SetError(txtInstalacion, "El formato debe contener 4 letras y 6 numeros en este orden");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtEmpleado.Text, "^[A-Za-z]{4}[0-9]{6}$"))
+            {
+                errorProvider1.SetError(txtEmpleado, "El formato debe contener 4 letras y 6 numeros en este orden");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtContrato.Text, "^[A-Za-z]{4}[0-9]{6}$"))
+            {
+                errorProvider1.SetError(txtContrato, "El formato debe contener 4 letras y 6 numeros en este orden");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+
+            return true;
+        }
         public frmAgregarModificarInsta(int op, string id)
         {
             InitializeComponent();
@@ -44,8 +79,7 @@ namespace SGMDT_Wifimex
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtContrato.Text.Length>0 & txtInstalacion.Text.Length>0 & txtEmpleado.Text.Length>0)
-            {
+
                 if (OP == 1)
                 {
                     Instalaciones Inst = new Instalaciones();
@@ -54,6 +88,8 @@ namespace SGMDT_Wifimex
                     Inst.idContratos = txtContrato.Text;
                     Inst.Estatus = true;
                     Inst.fechaInstalacin = dtpInstalacion.Text;
+                if (Verificar())
+                {
                     Guardado = new DAOInstalaciones().AgregarInstlacion(Inst);
                     if (Guardado == 0)
                     {
@@ -65,6 +101,7 @@ namespace SGMDT_Wifimex
                         MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
+                }
                 else if (OP == 2)
                 {
                     Instalaciones Inst = new Instalaciones();
@@ -72,6 +109,8 @@ namespace SGMDT_Wifimex
                     Inst.idEmpelado = txtEmpleado.Text;
                     Inst.idContratos = txtContrato.Text;
                     Inst.fechaInstalacin = dtpInstalacion.Text;
+                if (Verificar())
+                {
                     Modificado = new DAOInstalaciones().ModificarInstalacion(Inst);
                     if (Modificado)
                     {
@@ -83,7 +122,8 @@ namespace SGMDT_Wifimex
                         MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-            }
+                }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,8 @@ namespace SGMDT_Wifimex
         private string ID;
         public int Guardado { get; set; }
         public bool Modificado { get; set; }
+        
+
         public frmAgregarModificar(int op, string id)
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace SGMDT_Wifimex
             if (op==1)
             {
                 this.Text = "Agregar";
+                cbxRol.SelectedIndex = 0;
             }
             // Aquie se carga los datos para cuando se actualizan
             else if (op == 2)
@@ -48,12 +52,80 @@ namespace SGMDT_Wifimex
             }
         }
 
+        public bool Verificar()
+        {
+            if (!Regex.IsMatch(txtNumEmpleado.Text, "^[A-Za-z]{4}[0-9]{6}$"))
+            {
+                erpVerificar.SetError(txtNumEmpleado, "El formato debe contener 4 letras y 6 numeros en este orden");
+                Console.WriteLine("Falla");
+                return false;
+            }
+            else
+            {
+                erpVerificar.Clear();
+            }
+            if (!Regex.IsMatch(txtRFC.Text, @"^[A-Z]{4}\d{6}([A-Z0-9]{2}[A-Z0-9]{1})?$"))
+            {
+                erpVerificar.SetError(txtRFC, "Verifique que su RFC este correcto");
+                return false;
+            }
+            else
+            {
+                erpVerificar.Clear();
+            }
+            if (!Regex.IsMatch(txtCURP.Text, @"^[A-Z]{4}\d{6}[HM][A-Z]{5}[A-Z0-9]{2}$"))
+            {
+                erpVerificar.SetError(txtCURP, "Verifique que su CURP cumpla con el formato requerido");
+                return false;
+            }
+            else
+            {
+                erpVerificar.Clear();
+            }
+            if (!Regex.IsMatch(txtNombre.Text, @"^[A-Za-z][A-Za-z .]{1,}[A-Za-z]$"))
+            {
+                erpVerificar.SetError(txtNombre, "El nombre no puede contener números o caracteres especiales");
+                return false;
+            }
+            else
+            {
+                erpVerificar.Clear();
+            }
+            if (!Regex.IsMatch(txtDireccion.Text, @"^[A-Za-z][A-Za-z .]{1,}\s+#\d+(-\d+)?$"))
+            {
+                erpVerificar.SetError(txtDireccion, "Siga al formato adecuado , ejemplo : 'Calle #123', en caso de ser departamento agregue '-Número interior'");
+                return false;
+            }
+            else
+            {
+                erpVerificar.Clear();
+            }
+            if (!Regex.IsMatch(txtTelefono.Text, @"^[0-9]{10}?$"))
+            {
+                erpVerificar.SetError(txtTelefono, "Verifique el número contenga 10 dígitos");
+                return false;
+            }
+            else
+            {
+                erpVerificar.Clear();
+            }
+            if (!Regex.IsMatch(txtCorreo.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+            {
+                erpVerificar.SetError(txtCorreo, "Verifique en correo este correctamente escrito y sin espacios");
+                return false;
+            }
+            else
+            {
+                erpVerificar.Clear();
+            }
+
+
+            return true;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtNumEmpleado.Text.Length>0 & txtNombre.Text.Length > 0 & txtRFC.Text.Length > 0 & txtCURP.Text.Length > 0
-                & txtCorreo.Text.Length > 0 & txtDireccion.Text.Length > 0
-                & txtDireccion.Text.Length > 0  & txtTelefono.Text.Length > 0)
-            {
+            
                 if (OP == 1)
                 {
                     Empleados emp = new Empleados();
@@ -69,15 +141,18 @@ namespace SGMDT_Wifimex
                     emp.Telefono = txtTelefono.Text;
                     emp.Estatus = true;
                     emp.fechaContratacion = dtpContrato.Text;
-                    Guardado = new DAOEmpleados().AgregarEmpleado(emp);
-                    if (Guardado == 0)
+                    if (Verificar())
                     {
-                        MessageBox.Show("Usuario agregado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Guardado = new DAOEmpleados().AgregarEmpleado(emp);
+                        if (Guardado == 0)
+                        {
+                            MessageBox.Show("Usuario agregado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
                 else if (OP == 2)
@@ -93,18 +168,21 @@ namespace SGMDT_Wifimex
                     emp.Direccion = txtDireccion.Text;
                     emp.Rol = cbxRol.SelectedItem.ToString();
                     emp.Telefono = txtTelefono.Text;
-                    Modificado = new DAOEmpleados().ModificarEmpleado(emp);
-                    if (Modificado)
+                    if (Verificar())
                     {
-                        MessageBox.Show("Usuario modificado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Modificado = new DAOEmpleados().ModificarEmpleado(emp);
+                        if (Modificado)
+                        {
+                            MessageBox.Show("Usuario modificado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
-            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

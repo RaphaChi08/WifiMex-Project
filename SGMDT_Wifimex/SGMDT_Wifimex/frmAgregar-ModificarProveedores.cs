@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,66 @@ namespace SGMDT_Wifimex
         private string ID;
         public int Guardado { get; set; }
         public bool Modificado { get; set; }
+        public bool Verificar()
+        {
+            if (!Regex.IsMatch(txtClave.Text, "^[A-Za-z]{4}[0-9]{6}$"))
+            {
+                errorProvider1.SetError(txtClave, "El formato debe contener 4 letras y 6 numeros en este orden");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtNombre.Text, @"^[A-Za-z][A-Za-z .]{1,}[A-Za-z]$"))
+            {
+                errorProvider1.SetError(txtNombre, "El nombre no puede contener números o caracteres especiales");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtRFC.Text, @"^[A-Z]{4}\d{6}([A-Z0-9]{2}[A-Z0-9]{1})?$"))
+            {
+                errorProvider1.SetError(txtRFC, "Verifique que su RFC este correcto");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtDireccion.Text, @"^[A-Za-z][A-Za-z .]{1,}\s+#\d+(-\d+)?$"))
+            {
+                errorProvider1.SetError(txtDireccion, "Siga al formato adecuado , ejemplo : 'Calle #123', en caso de ser departamento agregue '-Número interior'");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtTelefono.Text, @"^[0-9]{10}?$"))
+            {
+                errorProvider1.SetError(txtTelefono, "Verifique el número contenga 10 dígitos");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtCorreo.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+            {
+                errorProvider1.SetError(txtCorreo, "Verifique en correo este correctamente escrito y sin espacios");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+
+            return true;
+        }
         public frmAgregar_ModificarProveedores(int op, string id)
         {
             InitializeComponent();
@@ -45,8 +106,7 @@ namespace SGMDT_Wifimex
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtClave.Text.Length > 0 & txtCorreo.Text.Length > 0 & txtDireccion.Text.Length > 0 & txtNombre.Text.Length > 0 & txtRFC.Text.Length > 0 & txtTelefono.Text.Length > 0)
-            {
+
                 if (OP == 1)
                 {
                     Proveedores Inst = new Proveedores();
@@ -58,6 +118,8 @@ namespace SGMDT_Wifimex
                     Inst.Correo = txtCorreo.Text;
                     Inst.fechaRegistro = dtpFecha.Text;
                     Inst.Estatus = true;
+                    if (Verificar())
+                    {
                     Guardado = new DAOProveedores().AgregarProveedor(Inst);
                     if (Guardado > 0)
                     {
@@ -68,6 +130,7 @@ namespace SGMDT_Wifimex
                     {
                         MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+                }
                 }
                 else if (OP == 2)
                 {
@@ -80,6 +143,8 @@ namespace SGMDT_Wifimex
                     Inst.Correo = txtCorreo.Text;
                     Inst.fechaRegistro = dtpFecha.Text;
                     Inst.Estatus = true;
+                if (Verificar())
+                {
                     Modificado = new DAOProveedores().ModificarProveedor(Inst);
                     if (Modificado)
                     {
@@ -91,7 +156,8 @@ namespace SGMDT_Wifimex
                         MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-            }
+                }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

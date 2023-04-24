@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -45,6 +46,8 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtClave
@@ -52,7 +55,7 @@
             this.txtClave.Location = new System.Drawing.Point(13, 102);
             this.txtClave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(294, 26);
+            this.txtClave.Size = new System.Drawing.Size(294, 30);
             this.txtClave.TabIndex = 0;
             // 
             // label1
@@ -61,7 +64,7 @@
             this.label1.Location = new System.Drawing.Point(13, 77);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 20);
+            this.label1.Size = new System.Drawing.Size(69, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Clave:";
             // 
@@ -97,7 +100,7 @@
             this.label2.Location = new System.Drawing.Point(13, 170);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.Size = new System.Drawing.Size(87, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Nombre:";
             // 
@@ -107,7 +110,7 @@
             this.label3.Location = new System.Drawing.Point(13, 264);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 20);
+            this.label3.Size = new System.Drawing.Size(58, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "RFC:";
             // 
@@ -117,7 +120,7 @@
             this.label4.Location = new System.Drawing.Point(13, 356);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.Size = new System.Drawing.Size(99, 25);
             this.label4.TabIndex = 6;
             this.label4.Text = "Direccion:";
             // 
@@ -127,7 +130,7 @@
             this.label5.Location = new System.Drawing.Point(351, 77);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.Size = new System.Drawing.Size(95, 25);
             this.label5.TabIndex = 7;
             this.label5.Text = "Telefono:";
             // 
@@ -137,7 +140,7 @@
             this.label6.Location = new System.Drawing.Point(351, 170);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 20);
+            this.label6.Size = new System.Drawing.Size(78, 25);
             this.label6.TabIndex = 8;
             this.label6.Text = "Correo:";
             // 
@@ -147,7 +150,7 @@
             this.label7.Location = new System.Drawing.Point(351, 264);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 20);
+            this.label7.Size = new System.Drawing.Size(176, 25);
             this.label7.TabIndex = 9;
             this.label7.Text = "Fecha de Registro:";
             // 
@@ -156,7 +159,7 @@
             this.txtNombre.Location = new System.Drawing.Point(13, 195);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(294, 26);
+            this.txtNombre.Size = new System.Drawing.Size(294, 30);
             this.txtNombre.TabIndex = 10;
             // 
             // txtRFC
@@ -164,7 +167,7 @@
             this.txtRFC.Location = new System.Drawing.Point(13, 289);
             this.txtRFC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRFC.Name = "txtRFC";
-            this.txtRFC.Size = new System.Drawing.Size(294, 26);
+            this.txtRFC.Size = new System.Drawing.Size(294, 30);
             this.txtRFC.TabIndex = 11;
             // 
             // txtTelefono
@@ -172,7 +175,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(355, 102);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(294, 26);
+            this.txtTelefono.Size = new System.Drawing.Size(294, 30);
             this.txtTelefono.TabIndex = 12;
             // 
             // txtDireccion
@@ -180,7 +183,7 @@
             this.txtDireccion.Location = new System.Drawing.Point(13, 381);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(294, 26);
+            this.txtDireccion.Size = new System.Drawing.Size(294, 30);
             this.txtDireccion.TabIndex = 13;
             // 
             // txtCorreo
@@ -188,7 +191,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(355, 195);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(294, 26);
+            this.txtCorreo.Size = new System.Drawing.Size(294, 30);
             this.txtCorreo.TabIndex = 14;
             // 
             // dtpFecha
@@ -196,7 +199,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(355, 287);
             this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(294, 26);
+            this.dtpFecha.Size = new System.Drawing.Size(294, 30);
             this.dtpFecha.TabIndex = 15;
             // 
             // lblTitulo
@@ -205,13 +208,17 @@
             this.lblTitulo.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(121, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(446, 44);
+            this.lblTitulo.Size = new System.Drawing.Size(561, 56);
             this.lblTitulo.TabIndex = 16;
             this.lblTitulo.Text = "Agregar proveedores";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmAgregar_ModificarProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 425);
             this.Controls.Add(this.lblTitulo);
@@ -235,6 +242,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAgregar_ModificarProveedores";
             this.Text = "frmAgregar_ModificarProveedores";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +267,6 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

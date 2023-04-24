@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +53,9 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cbxRol = new System.Windows.Forms.ComboBox();
             this.nudEdad = new System.Windows.Forms.NumericUpDown();
+            this.erpVerificar = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudEdad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpVerificar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -148,6 +151,7 @@
             // txtNumEmpleado
             // 
             this.txtNumEmpleado.Location = new System.Drawing.Point(139, 38);
+            this.txtNumEmpleado.MaxLength = 10;
             this.txtNumEmpleado.Name = "txtNumEmpleado";
             this.txtNumEmpleado.Size = new System.Drawing.Size(183, 22);
             this.txtNumEmpleado.TabIndex = 10;
@@ -155,6 +159,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(139, 86);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(183, 22);
             this.txtNombre.TabIndex = 11;
@@ -162,6 +167,7 @@
             // txtRFC
             // 
             this.txtRFC.Location = new System.Drawing.Point(139, 136);
+            this.txtRFC.MaxLength = 13;
             this.txtRFC.Name = "txtRFC";
             this.txtRFC.Size = new System.Drawing.Size(183, 22);
             this.txtRFC.TabIndex = 12;
@@ -169,6 +175,7 @@
             // txtCURP
             // 
             this.txtCURP.Location = new System.Drawing.Point(139, 182);
+            this.txtCURP.MaxLength = 18;
             this.txtCURP.Name = "txtCURP";
             this.txtCURP.Size = new System.Drawing.Size(183, 22);
             this.txtCURP.TabIndex = 13;
@@ -190,6 +197,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(490, 35);
+            this.txtDireccion.MaxLength = 100;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(200, 22);
             this.txtDireccion.TabIndex = 15;
@@ -204,6 +212,7 @@
             // txtContrasena
             // 
             this.txtContrasena.Location = new System.Drawing.Point(139, 262);
+            this.txtContrasena.MaxLength = 200;
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(183, 22);
             this.txtContrasena.TabIndex = 22;
@@ -257,6 +266,10 @@
             this.nudEdad.Size = new System.Drawing.Size(183, 22);
             this.nudEdad.TabIndex = 26;
             // 
+            // erpVerificar
+            // 
+            this.erpVerificar.ContainerControl = this;
+            // 
             // frmAgregarModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -291,6 +304,7 @@
             this.Name = "frmAgregarModificar";
             this.Text = "Agregar / Modificar";
             ((System.ComponentModel.ISupportInitialize)(this.nudEdad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpVerificar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,5 +336,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbxRol;
         private System.Windows.Forms.NumericUpDown nudEdad;
+        private System.Windows.Forms.ErrorProvider erpVerificar;
     }
 }

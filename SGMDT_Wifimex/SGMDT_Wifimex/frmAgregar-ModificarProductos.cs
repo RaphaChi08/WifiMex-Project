@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,30 @@ namespace SGMDT_Wifimex
         private string codigo;
         public int Guardado { get; set; }
         public bool Modificado { get; set; }
+        public bool Verificar()
+        {
+            if (!Regex.IsMatch(txtCodigo.Text, "^[0-9]{12}$"))
+            {
+                errorProvider1.SetError(txtCodigo, "El formato debe contener 4 letras y 6 numeros en este orden");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!Regex.IsMatch(txtNombre.Text, @"^[A-Za-z][A-Za-z .0-9]{1,}$"))
+            {
+                errorProvider1.SetError(txtNombre, "El nombre no puede contener números o caracteres especiales");
+                return false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+
+            return true;
+        }
         public frmAgregar_ModificarProductos(int op, string codigoBarra)
         {
             InitializeComponent();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -46,7 +49,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(13, 102);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(294, 26);
+            this.txtCodigo.Size = new System.Drawing.Size(294, 30);
             this.txtCodigo.TabIndex = 0;
             // 
             // label1
@@ -55,7 +58,7 @@
             this.label1.Location = new System.Drawing.Point(13, 77);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 20);
+            this.label1.Size = new System.Drawing.Size(168, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Codigo de barras:";
             // 
@@ -65,7 +68,7 @@
             this.label2.Location = new System.Drawing.Point(13, 165);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.Size = new System.Drawing.Size(87, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre:";
             // 
@@ -75,7 +78,7 @@
             this.label3.Location = new System.Drawing.Point(9, 252);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 20);
+            this.label3.Size = new System.Drawing.Size(169, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Fecha de registro:";
             // 
@@ -85,7 +88,7 @@
             this.label4.Location = new System.Drawing.Point(371, 77);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 20);
+            this.label4.Size = new System.Drawing.Size(108, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Proveedor:";
             // 
@@ -94,7 +97,7 @@
             this.txtNombre.Location = new System.Drawing.Point(13, 189);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(294, 26);
+            this.txtNombre.Size = new System.Drawing.Size(294, 30);
             this.txtNombre.TabIndex = 5;
             // 
             // dtpFecha
@@ -102,7 +105,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(13, 277);
             this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(294, 26);
+            this.dtpFecha.Size = new System.Drawing.Size(294, 30);
             this.dtpFecha.TabIndex = 6;
             // 
             // cbxProveedor
@@ -111,7 +114,7 @@
             this.cbxProveedor.Location = new System.Drawing.Point(360, 102);
             this.cbxProveedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxProveedor.Name = "cbxProveedor";
-            this.cbxProveedor.Size = new System.Drawing.Size(294, 28);
+            this.cbxProveedor.Size = new System.Drawing.Size(294, 33);
             this.cbxProveedor.TabIndex = 7;
             // 
             // lblTitulo
@@ -120,7 +123,7 @@
             this.lblTitulo.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(136, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(401, 44);
+            this.lblTitulo.Size = new System.Drawing.Size(502, 56);
             this.lblTitulo.TabIndex = 10;
             this.lblTitulo.Text = "Agregar productos";
             // 
@@ -149,9 +152,13 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmAgregar_ModificarProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 329);
             this.Controls.Add(this.lblTitulo);
@@ -169,6 +176,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAgregar_ModificarProductos";
             this.Text = "frmAgregar_ModificarProductos";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +195,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
