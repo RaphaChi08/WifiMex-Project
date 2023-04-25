@@ -10,13 +10,13 @@ namespace Modelos
     {
         public string idAlmacen { get; set; }
         public int cantProducto { get; set; }
-        public int codigoBarra { get; set; }
+        public string codigoBarra { get; set; }
         public string idEmpleado { get; set; }
-        public bool Estatus { get; set; }
+        public string Estatus { get; set; }
 
         public Almacen() { }
 
-        public Almacen(string idAlmacen, int cantProducto, int codigoBarra, string idEmpleado, bool estatus)
+        public Almacen(string idAlmacen, int cantProducto, string codigoBarra, string idEmpleado, string estatus)
         {
             this.idAlmacen = idAlmacen;
             this.cantProducto = cantProducto;

@@ -22,18 +22,26 @@ namespace SGMDT_Wifimex
         public void cargarTabla()
         {
             dgvAlmacen.DataSource= new DAOAlmacen().ObtenerTodos();
+            dgvAlmacen.Columns["idAlmacen"].HeaderText = "Clave Almacen";
+            dgvAlmacen.Columns["cantProducto"].HeaderText = "Cantidad en almacen";
+            dgvAlmacen.Columns["codigoBarra"].HeaderText = "Clave Recurso";
+            dgvAlmacen.Columns["idEmpleado"].HeaderText = "Clave empleado Encargado";
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddModyAlmacen frm= new  frmAddModyAlmacen("", 1);
             frm.ShowDialog();
+            if (frm.Agregado>0)
+            {
+                cargarTabla();
+            }
         }
 
         private void btnModify_Click(object sender, EventArgs e)
         {
             if (dgvAlmacen.SelectedRows.Count == 1)
             {
-                String idEmpleado = dgvAlmacen.SelectedRows[0].Cells["idContrato"].Value.ToString();
+                String idEmpleado = dgvAlmacen.SelectedRows[0].Cells["idAlmacen"].Value.ToString();
                 frmAddModyAlmacen frm = new frmAddModyAlmacen(idEmpleado, 2);
                 frm.ShowDialog();
                 if (frm.modificado)
@@ -55,7 +63,7 @@ namespace SGMDT_Wifimex
                                                      dgvAlmacen.SelectedRows[0].Cells["idAlmacen"].Value.ToString() + ", ¿deseas contunuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DialogResult.Yes == dialog)
                 {
-                    bool resp = new DAOCliente().eliminar(dgvAlmacen.SelectedRows[0].Cells["idAlmacen"].Value.ToString());
+                    bool resp = new DAOAlmacen().eliminar(dgvAlmacen.SelectedRows[0].Cells["idAlmacen"].Value.ToString());
                     if (resp)
                     {
                         MessageBox.Show("Almacen eliminado con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Question);

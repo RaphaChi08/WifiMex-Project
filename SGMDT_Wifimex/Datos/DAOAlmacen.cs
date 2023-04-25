@@ -31,9 +31,9 @@ namespace Datos
                         objAlmacen = new Almacen();
                         objAlmacen.idAlmacen = fila["idAlmacen"].ToString();
                         objAlmacen.cantProducto = int.Parse(fila["cantProducto"].ToString());
-                        objAlmacen.codigoBarra = int.Parse(fila["codigoBarra"].ToString());
+                        objAlmacen.codigoBarra = fila["codigoBarra"].ToString();
                         objAlmacen.idEmpleado = fila["idEmpleado"].ToString();
-                        objAlmacen.Estatus = fila["Estatus"].ToString() == "True" ? true : false;
+                        objAlmacen.Estatus = fila["Estatus"].ToString() == "True" ? "Activo" : "Inactivo";
 
                         lista.Add(objAlmacen);
                     }
@@ -82,9 +82,9 @@ namespace Datos
                         objAlmacen = new Almacen();
                         objAlmacen.idAlmacen = fila["idAlmacen"].ToString();
                         objAlmacen.cantProducto = int.Parse(fila["cantProducto"].ToString());
-                        objAlmacen.codigoBarra = int.Parse(fila["codigoBarra"].ToString());
+                        objAlmacen.codigoBarra = fila["codigoBarra"].ToString();
                         objAlmacen.idEmpleado = fila["idEmpleado"].ToString();
-                        objAlmacen.Estatus = fila["Estatus"].ToString() == "True" ? true : false;
+                        objAlmacen.Estatus = fila["Estatus"].ToString() == "True" ? "Activo" : "Inactivo";
 
                         lista.Add(objAlmacen);
                     }
@@ -126,9 +126,9 @@ namespace Datos
                         objAlmacen = new Almacen();
                         objAlmacen.idAlmacen = fila["idAlmacen"].ToString();
                         objAlmacen.cantProducto = int.Parse(fila["cantProducto"].ToString());
-                        objAlmacen.codigoBarra = int.Parse(fila["codigoBarra"].ToString());
+                        objAlmacen.codigoBarra = fila["codigoBarra"].ToString();
                         objAlmacen.idEmpleado = fila["idEmpleado"].ToString();
-                        objAlmacen.Estatus = fila["Estatus"].ToString() == "True" ? true : false;
+                        objAlmacen.Estatus = fila["Estatus"].ToString() == "True" ? "Activo" : "Inactivo";
                     }
 
                     return objAlmacen;
@@ -209,7 +209,7 @@ namespace Datos
                     comando.Parameters.AddWithValue("@cant", almacen.cantProducto);
                     comando.Parameters.AddWithValue("@emp", almacen.idEmpleado);
                     comando.Parameters.AddWithValue("@id", almacen.idAlmacen);
-                    comando.Parameters.AddWithValue("@estatus", almacen.Estatus == true ? 1 : 0);
+                    comando.Parameters.AddWithValue("@estatus", almacen.Estatus == "Activo" ? 1 : 0);
 
                     comando.Connection = Conexion.conexion;
 
@@ -240,9 +240,10 @@ namespace Datos
                     MySqlCommand comando = new MySqlCommand(
                         "INSERT INTO `dbwifimex`.`almacen` " +
                         "(`idAlmacen`, `cantProducto`, `codigoBarra`, `idEmpleado`, `Estatus`) VALUES " +
-                        "(@id, '0', @codi, @emp, '1')");
+                        "(@id, @cant, @codi, @emp, '1')");
 
                     comando.Parameters.AddWithValue("@id", almacen.idAlmacen);
+                    comando.Parameters.AddWithValue("@cant", almacen.cantProducto);
                     comando.Parameters.AddWithValue("@codi", almacen.codigoBarra);
                     comando.Parameters.AddWithValue("@emp", almacen.idEmpleado);
                     comando.Connection = Conexion.conexion;

@@ -39,12 +39,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCant = new System.Windows.Forms.NumericUpDown();
+            this.nudCant = new System.Windows.Forms.NumericUpDown();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAcep = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxEstatus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,9 +53,9 @@
             this.gbxEstatus.AutoSize = true;
             this.gbxEstatus.Controls.Add(this.rbInactivo);
             this.gbxEstatus.Controls.Add(this.rbActivo);
-            this.gbxEstatus.Location = new System.Drawing.Point(189, 194);
+            this.gbxEstatus.Location = new System.Drawing.Point(168, 199);
             this.gbxEstatus.Name = "gbxEstatus";
-            this.gbxEstatus.Size = new System.Drawing.Size(230, 78);
+            this.gbxEstatus.Size = new System.Drawing.Size(235, 84);
             this.gbxEstatus.TabIndex = 9;
             this.gbxEstatus.TabStop = false;
             this.gbxEstatus.Text = "Estatus";
@@ -65,7 +65,7 @@
             this.rbInactivo.AutoSize = true;
             this.rbInactivo.Location = new System.Drawing.Point(129, 26);
             this.rbInactivo.Name = "rbInactivo";
-            this.rbInactivo.Size = new System.Drawing.Size(82, 24);
+            this.rbInactivo.Size = new System.Drawing.Size(100, 29);
             this.rbInactivo.TabIndex = 1;
             this.rbInactivo.Text = "Inactivo";
             this.rbInactivo.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             this.rbActivo.Checked = true;
             this.rbActivo.Location = new System.Drawing.Point(6, 26);
             this.rbActivo.Name = "rbActivo";
-            this.rbActivo.Size = new System.Drawing.Size(70, 24);
+            this.rbActivo.Size = new System.Drawing.Size(87, 29);
             this.rbActivo.TabIndex = 0;
             this.rbActivo.TabStop = true;
             this.rbActivo.Text = "Activo";
@@ -87,7 +87,7 @@
             this.txtClave.Location = new System.Drawing.Point(225, 37);
             this.txtClave.MaxLength = 10;
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(307, 26);
+            this.txtClave.Size = new System.Drawing.Size(307, 30);
             this.txtClave.TabIndex = 10;
             // 
             // cbxBarra
@@ -96,7 +96,7 @@
             this.cbxBarra.FormattingEnabled = true;
             this.cbxBarra.Location = new System.Drawing.Point(225, 108);
             this.cbxBarra.Name = "cbxBarra";
-            this.cbxBarra.Size = new System.Drawing.Size(307, 28);
+            this.cbxBarra.Size = new System.Drawing.Size(307, 33);
             this.cbxBarra.TabIndex = 12;
             // 
             // cbxEmpleado
@@ -105,57 +105,62 @@
             this.cbxEmpleado.FormattingEnabled = true;
             this.cbxEmpleado.Location = new System.Drawing.Point(225, 145);
             this.cbxEmpleado.Name = "cbxEmpleado";
-            this.cbxEmpleado.Size = new System.Drawing.Size(307, 28);
+            this.cbxEmpleado.Size = new System.Drawing.Size(307, 33);
             this.cbxEmpleado.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 40);
+            this.label1.Location = new System.Drawing.Point(67, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 20);
+            this.label1.Size = new System.Drawing.Size(145, 25);
             this.label1.TabIndex = 14;
             this.label1.Text = "Clave Almacen";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 74);
+            this.label2.Location = new System.Drawing.Point(16, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 20);
+            this.label2.Size = new System.Drawing.Size(203, 25);
             this.label2.TabIndex = 15;
             this.label2.Text = "Cantidad del producto";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(95, 111);
+            this.label3.Location = new System.Drawing.Point(57, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 20);
+            this.label3.Size = new System.Drawing.Size(154, 25);
             this.label3.TabIndex = 16;
             this.label3.Text = "Codigo de Barra";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 148);
+            this.label4.Location = new System.Drawing.Point(18, 148);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 20);
+            this.label4.Size = new System.Drawing.Size(200, 25);
             this.label4.TabIndex = 17;
             this.label4.Text = "Empleado Encargado";
             // 
-            // txtCant
+            // nudCant
             // 
-            this.txtCant.Location = new System.Drawing.Point(225, 72);
-            this.txtCant.Minimum = new decimal(new int[] {
+            this.nudCant.Location = new System.Drawing.Point(225, 72);
+            this.nudCant.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudCant.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.txtCant.Name = "txtCant";
-            this.txtCant.Size = new System.Drawing.Size(308, 26);
-            this.txtCant.TabIndex = 18;
-            this.txtCant.Value = new decimal(new int[] {
+            this.nudCant.Name = "nudCant";
+            this.nudCant.Size = new System.Drawing.Size(308, 30);
+            this.nudCant.TabIndex = 18;
+            this.nudCant.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -169,6 +174,7 @@
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAcep
             // 
@@ -186,13 +192,13 @@
             // 
             // frmAddModyAlmacen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(590, 337);
             this.Controls.Add(this.btnAcep);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.txtCant);
+            this.Controls.Add(this.nudCant);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -210,7 +216,7 @@
             this.Text = "frmAddModyAlmacen";
             this.gbxEstatus.ResumeLayout(false);
             this.gbxEstatus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -229,7 +235,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown txtCant;
+        private System.Windows.Forms.NumericUpDown nudCant;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAcep;
         private System.Windows.Forms.ErrorProvider errorProvider1;

@@ -23,7 +23,7 @@ namespace SGMDT_Wifimex
         {
             if (!Regex.IsMatch(txtCodigo.Text, "^[0-9]{12}$"))
             {
-                errorProvider1.SetError(txtCodigo, "El formato debe contener 4 letras y 6 numeros en este orden");
+                errorProvider1.SetError(txtCodigo, "El formato debe contener 12 numeros");
                 return false;
             }
             else
