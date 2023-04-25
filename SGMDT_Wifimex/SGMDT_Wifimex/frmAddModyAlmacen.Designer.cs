@@ -53,9 +53,9 @@
             this.gbxEstatus.AutoSize = true;
             this.gbxEstatus.Controls.Add(this.rbInactivo);
             this.gbxEstatus.Controls.Add(this.rbActivo);
-            this.gbxEstatus.Location = new System.Drawing.Point(148, 162);
+            this.gbxEstatus.Location = new System.Drawing.Point(189, 194);
             this.gbxEstatus.Name = "gbxEstatus";
-            this.gbxEstatus.Size = new System.Drawing.Size(200, 63);
+            this.gbxEstatus.Size = new System.Drawing.Size(230, 78);
             this.gbxEstatus.TabIndex = 9;
             this.gbxEstatus.TabStop = false;
             this.gbxEstatus.Text = "Estatus";
@@ -63,9 +63,9 @@
             // rbInactivo
             // 
             this.rbInactivo.AutoSize = true;
-            this.rbInactivo.Location = new System.Drawing.Point(115, 21);
+            this.rbInactivo.Location = new System.Drawing.Point(129, 26);
             this.rbInactivo.Name = "rbInactivo";
-            this.rbInactivo.Size = new System.Drawing.Size(74, 20);
+            this.rbInactivo.Size = new System.Drawing.Size(82, 24);
             this.rbInactivo.TabIndex = 1;
             this.rbInactivo.Text = "Inactivo";
             this.rbInactivo.UseVisualStyleBackColor = true;
@@ -74,9 +74,9 @@
             // 
             this.rbActivo.AutoSize = true;
             this.rbActivo.Checked = true;
-            this.rbActivo.Location = new System.Drawing.Point(6, 21);
+            this.rbActivo.Location = new System.Drawing.Point(6, 26);
             this.rbActivo.Name = "rbActivo";
-            this.rbActivo.Size = new System.Drawing.Size(65, 20);
+            this.rbActivo.Size = new System.Drawing.Size(70, 24);
             this.rbActivo.TabIndex = 0;
             this.rbActivo.TabStop = true;
             this.rbActivo.Text = "Activo";
@@ -84,76 +84,76 @@
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(159, 29);
+            this.txtClave.Location = new System.Drawing.Point(225, 37);
             this.txtClave.MaxLength = 10;
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(315, 22);
+            this.txtClave.Size = new System.Drawing.Size(307, 26);
             this.txtClave.TabIndex = 10;
             // 
             // cbxBarra
             // 
             this.cbxBarra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBarra.FormattingEnabled = true;
-            this.cbxBarra.Location = new System.Drawing.Point(167, 86);
+            this.cbxBarra.Location = new System.Drawing.Point(225, 108);
             this.cbxBarra.Name = "cbxBarra";
-            this.cbxBarra.Size = new System.Drawing.Size(307, 24);
+            this.cbxBarra.Size = new System.Drawing.Size(307, 28);
             this.cbxBarra.TabIndex = 12;
             // 
             // cbxEmpleado
             // 
             this.cbxEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEmpleado.FormattingEnabled = true;
-            this.cbxEmpleado.Location = new System.Drawing.Point(200, 116);
+            this.cbxEmpleado.Location = new System.Drawing.Point(225, 145);
             this.cbxEmpleado.Name = "cbxEmpleado";
-            this.cbxEmpleado.Size = new System.Drawing.Size(274, 24);
+            this.cbxEmpleado.Size = new System.Drawing.Size(307, 28);
             this.cbxEmpleado.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 32);
+            this.label1.Location = new System.Drawing.Point(105, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 16);
+            this.label1.Size = new System.Drawing.Size(114, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Clave Almacen";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 60);
+            this.label2.Location = new System.Drawing.Point(54, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 16);
+            this.label2.Size = new System.Drawing.Size(165, 20);
             this.label2.TabIndex = 15;
             this.label2.Text = "Cantidad del producto";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 89);
+            this.label3.Location = new System.Drawing.Point(95, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 16);
+            this.label3.Size = new System.Drawing.Size(124, 20);
             this.label3.TabIndex = 16;
             this.label3.Text = "Codigo de Barra";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 119);
+            this.label4.Location = new System.Drawing.Point(56, 148);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 16);
+            this.label4.Size = new System.Drawing.Size(163, 20);
             this.label4.TabIndex = 17;
             this.label4.Text = "Empleado Encargado";
             // 
             // txtCant
             // 
-            this.txtCant.Location = new System.Drawing.Point(200, 58);
+            this.txtCant.Location = new System.Drawing.Point(225, 72);
             this.txtCant.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.txtCant.Name = "txtCant";
-            this.txtCant.Size = new System.Drawing.Size(273, 22);
+            this.txtCant.Size = new System.Drawing.Size(308, 26);
             this.txtCant.TabIndex = 18;
             this.txtCant.Value = new decimal(new int[] {
             1,
@@ -163,18 +163,18 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(58, 231);
+            this.btnCancel.Location = new System.Drawing.Point(66, 289);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(161, 23);
+            this.btnCancel.Size = new System.Drawing.Size(182, 29);
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnAcep
             // 
-            this.btnAcep.Location = new System.Drawing.Point(312, 231);
+            this.btnAcep.Location = new System.Drawing.Point(351, 289);
             this.btnAcep.Name = "btnAcep";
-            this.btnAcep.Size = new System.Drawing.Size(161, 23);
+            this.btnAcep.Size = new System.Drawing.Size(182, 29);
             this.btnAcep.TabIndex = 20;
             this.btnAcep.Text = "Aceptar";
             this.btnAcep.UseVisualStyleBackColor = true;
@@ -186,10 +186,10 @@
             // 
             // frmAddModyAlmacen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(524, 269);
+            this.ClientSize = new System.Drawing.Size(590, 337);
             this.Controls.Add(this.btnAcep);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtCant);
@@ -201,7 +201,12 @@
             this.Controls.Add(this.cbxBarra);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.gbxEstatus);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAddModyAlmacen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddModyAlmacen";
             this.gbxEstatus.ResumeLayout(false);
             this.gbxEstatus.PerformLayout();

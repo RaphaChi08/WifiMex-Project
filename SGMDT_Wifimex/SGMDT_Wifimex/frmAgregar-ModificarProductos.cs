@@ -50,8 +50,8 @@ namespace SGMDT_Wifimex
             this.codigo = codigoBarra;
             if (op == 1)
             {
-                this.Text = "Agregar";
-                lblTitulo.Text = "Agregar productos";
+                this.Text = "Registrar";
+                lblTitulo.Text = "Registrar productos";
                 List<Proveedores> prov = new DAOProveedores().ObtenerProveedoresActivos();
                 cbxProveedor.DataSource = prov;
                 cbxProveedor.DisplayMember = "nomProveedores";
@@ -82,21 +82,28 @@ namespace SGMDT_Wifimex
                 if (OP == 1)
                 {
                     Productos Inst = new Productos();
-                    Inst.codigoBarra =txtCodigo.Text;
+                    Inst.codigoBarra = txtCodigo.Text;
                     Inst.nomProducto = txtNombre.Text;
                     Inst.fechaRegistro = dtpFecha.Text;
                     Inst.idProveedores = cbxProveedor.SelectedValue.ToString();
                     Inst.nomProveedor = cbxProveedor.SelectedText;
                     Inst.Estatus = true;
-                    Guardado = new DAOProductos().AgregarProducto(Inst);
-                    if (Guardado > 0)
+                    if (Verificar())
                     {
-                        MessageBox.Show("Producto agregado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
+                        Guardado = new DAOProductos().AgregarProducto(Inst);
+                        if (Guardado > 0)
+                        {
+                            MessageBox.Show("Se ha guardado exitosamente el producto", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Producto ya registrado", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Producto ya registrado", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Rellene todos los campos", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else if (OP == 2)
@@ -108,18 +115,30 @@ namespace SGMDT_Wifimex
                     Inst.idProveedores = cbxProveedor.SelectedValue.ToString();
                     Inst.nomProveedor = cbxProveedor.SelectedText;
                     Inst.Estatus = true;
-                    Modificado = new DAOProductos().ModificarProducto(Inst);
-                    if (Modificado)
+                    if (Verificar())
                     {
-                        MessageBox.Show("Proveedor modificada correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
+                        Modificado = new DAOProductos().ModificarProducto(Inst);
+                        if (Modificado)
+                        {
+                            MessageBox.Show("Se ha actualizado exitosamente el producto", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Rellene todos los campos", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

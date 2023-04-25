@@ -252,5 +252,38 @@
   <ItemGroup>
     <None Include="Resources\Cancel.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WifiMex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmEmpleado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmInstalacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmProveedores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmAlmacen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmProducto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmContrato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmCliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inactivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Activo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Todos.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

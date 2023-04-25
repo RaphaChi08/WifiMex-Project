@@ -38,9 +38,9 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.cbxProveedor = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,26 +49,26 @@
             this.txtCodigo.Location = new System.Drawing.Point(13, 102);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(294, 30);
+            this.txtCodigo.Size = new System.Drawing.Size(294, 26);
             this.txtCodigo.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 77);
+            this.label1.Location = new System.Drawing.Point(9, 77);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 25);
+            this.label1.Size = new System.Drawing.Size(134, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Codigo de barras:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 165);
+            this.label2.Location = new System.Drawing.Point(9, 164);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 25);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre:";
             // 
@@ -78,17 +78,17 @@
             this.label3.Location = new System.Drawing.Point(9, 252);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 25);
+            this.label3.Size = new System.Drawing.Size(137, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Fecha de registro:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(371, 77);
+            this.label4.Location = new System.Drawing.Point(356, 77);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 25);
+            this.label4.Size = new System.Drawing.Size(85, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Proveedor:";
             // 
@@ -97,7 +97,7 @@
             this.txtNombre.Location = new System.Drawing.Point(13, 189);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(294, 30);
+            this.txtNombre.Size = new System.Drawing.Size(294, 26);
             this.txtNombre.TabIndex = 5;
             // 
             // dtpFecha
@@ -105,7 +105,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(13, 277);
             this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(294, 30);
+            this.dtpFecha.Size = new System.Drawing.Size(294, 26);
             this.dtpFecha.TabIndex = 6;
             // 
             // cbxProveedor
@@ -114,18 +114,22 @@
             this.cbxProveedor.Location = new System.Drawing.Point(360, 102);
             this.cbxProveedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxProveedor.Name = "cbxProveedor";
-            this.cbxProveedor.Size = new System.Drawing.Size(294, 33);
+            this.cbxProveedor.Size = new System.Drawing.Size(294, 28);
             this.cbxProveedor.TabIndex = 7;
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(136, 9);
+            this.lblTitulo.Font = new System.Drawing.Font("Trebuchet MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(192, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(502, 56);
+            this.lblTitulo.Size = new System.Drawing.Size(292, 40);
             this.lblTitulo.TabIndex = 10;
             this.lblTitulo.Text = "Agregar productos";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // btnCancelar
             // 
@@ -138,6 +142,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(294, 61);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -152,13 +157,9 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // frmAgregar_ModificarProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 329);
             this.Controls.Add(this.lblTitulo);
@@ -173,8 +174,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCodigo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAgregar_ModificarProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgregar_ModificarProductos";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

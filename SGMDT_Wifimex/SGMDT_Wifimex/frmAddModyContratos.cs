@@ -68,11 +68,13 @@ namespace SGMDT_Wifimex
             {
                 case 1:
                     this.Text = "Agregar";
+                    lblTitulo.Text = "Crear Contrato";
                     gbxEstatus.Enabled = false;
                     cbxCliente.SelectedIndex = 0;
                     break;
                 case 2:
                     this.Text = "Actualizar";
+                    lblTitulo.Text = "Actualizar Contrato";
                     txtIdCo.Enabled = false;
                     Contrato con = new DAOContratos().ObtenerUno(ID);
 

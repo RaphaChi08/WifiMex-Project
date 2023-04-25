@@ -48,7 +48,7 @@ namespace SGMDT_Wifimex
             if (dgvProductos.SelectedRows.Count > 0)
             {
                 string codigo = dgvProductos.SelectedRows[0].Cells["codigoBarra"].Value.ToString();
-                DialogResult resp = MessageBox.Show("Estas a punto de eliminar a " +
+                DialogResult resp = MessageBox.Show("Estas a punto de borrar a " +
                                     (new DAOProductos().ObtenerUnProducto(codigo).nomProducto) +
                                     " del registro, ¿Deseas continuar?", "",
                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -56,10 +56,14 @@ namespace SGMDT_Wifimex
                 {
                     if (new DAOProductos().EliminarProducto(codigo))
                     {
-                        MessageBox.Show("Se a eliminado el proveedor seleccionado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se ha borrado exitosamente el producto", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarTablaAc();
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un registro primero", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -74,6 +78,7 @@ namespace SGMDT_Wifimex
             dgvProductos.Columns["nomProveedor"].HeaderText = "Proveedor";
             dgvProductos.Columns["Estatus"].Visible = false;
             txtBuscar.Text = "";
+            MessageBox.Show("Búsqueda exitosa", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void CargarTablaAc()

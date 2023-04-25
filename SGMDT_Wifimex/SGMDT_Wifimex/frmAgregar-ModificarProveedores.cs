@@ -85,8 +85,8 @@ namespace SGMDT_Wifimex
             this.OP = op;
             if (op == 1)
             {
-                this.Text = "Agregar";
-                lblTitulo.Text = "Agregar proveedores";
+                this.Text = "Registrar";
+                lblTitulo.Text = "Registrar proveedores";
             }
             else if (op == 2)
             {
@@ -123,13 +123,17 @@ namespace SGMDT_Wifimex
                     Guardado = new DAOProveedores().AgregarProveedor(Inst);
                     if (Guardado > 0)
                     {
-                        MessageBox.Show("Proveedor agregada correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se ha guardado exitosamente el proveedor", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
                         MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+                }
+                    else
+                {
+                    MessageBox.Show("Rellene todos los campos correctamente","", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 }
                 else if (OP == 2)
@@ -148,13 +152,17 @@ namespace SGMDT_Wifimex
                     Modificado = new DAOProveedores().ModificarProveedor(Inst);
                     if (Modificado)
                     {
-                        MessageBox.Show("Proveedor modificada correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se ha actualizado exitosamente el proveedor.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
                         MessageBox.Show("A surgido un problema, inténtelo de nuevo más tardé", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Rellene todos los campos correctamente", "",MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 }
             
