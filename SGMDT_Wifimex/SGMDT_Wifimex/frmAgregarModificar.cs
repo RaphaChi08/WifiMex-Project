@@ -49,6 +49,7 @@ namespace SGMDT_Wifimex
                 txtTelefono.Text = emp.Telefono;
                 cbxRol.SelectedItem = emp.Rol;
                 dtpContrato.Enabled = false;
+                txtNumEmpleado.Enabled = false;
             }
         }
 

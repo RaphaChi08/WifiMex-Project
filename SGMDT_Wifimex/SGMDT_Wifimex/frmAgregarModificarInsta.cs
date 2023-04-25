@@ -74,6 +74,7 @@ namespace SGMDT_Wifimex
                 txtContrato.Text = ints.idContratos;
                 dtpInstalacion.Text = ints.fechaInstalacin;
                 dtpInstalacion.Enabled = false;
+                txtInstalacion.Enabled = false;
             }
         }
 
