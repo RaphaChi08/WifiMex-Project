@@ -9,8 +9,26 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
+    /// <summary>
+    /// Clase DAOAlamacen que contiene los metodos para lealizar consutlas, inserciones, actulizaciones y eliminacion
+    /// de registros de la tabla Almacen de la base de datos del programa.
+    /// </summary>
     public class DAOAlmacen
     {
+        /// <summary>
+        /// Metodo para obtener una list con todos los registros que esten almacenados en la base de datos
+        /// del programa en la tabla de alamacen.
+        /// </summary>
+        /// <returns>
+        /// Este medoto realiza una conexion hacia la base de datos para obetener una lista con todos
+        /// los registros que tenga la tabla de almacen y regresa una lista de tipo Alamacen.
+        /// </returns>
+        /// <exception cref="Exception">
+        /// Encaso de no poder encontrar o establecer una conexion hacia la base de datos
+        /// mandara un mensaje de que no se pudo realizar la conexion hacia la base de datos.
+        /// En caso de que no se pudo encontrar el regsitros a buscar regresara un mensaje 
+        /// de que no se pudo encontrar el registro.
+        /// </exception>
         public List<Almacen> ObtenerTodos()
         {
             try
@@ -54,7 +72,24 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
-
+        /// <summary>
+        /// Metodo que recibe un parametro de entrada para la busqueda de un registro en espesifico
+        /// en la de Alamcen para posterirormente regresar el resultado.
+        /// </summary>
+        /// <param name="text">
+        /// Variable de tipo estring que se recive como entrada en el metodo lal cual almacena
+        /// un texto para la busqueda de un registro en la base de datos del programa.
+        /// </param>
+        /// <returns>
+        /// Regresa una Lista de tipo Almacen con el registro que coincida con el texto de la variable
+        /// si se encuentra en la base de datos.
+        /// </returns>
+        /// <exception cref="Exception">
+        /// Encaso de no poder encontrar o establecer una conexion hacia la base de datos
+        /// mandara un mensaje de que no se pudo realizar la conexion hacia la base de datos.
+        /// En caso de que no se pudo encontrar el regsitros a buscar regresara un mensaje 
+        /// de que no se pudo encontrar el registro.
+        /// </exception>
         public List<Almacen> Buscar(string text)
         {
             try
@@ -105,7 +140,24 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
-
+        /// <summary>
+        /// Metodo que permite obtener un registro de la base de datos del programa de la tabla almacen
+        /// a traves del ID de un alacmen proporcionado por el usuario.
+        /// </summary>
+        /// <param name="id">
+        /// id variable de tipo String que alamacea el ID de un alamacen para realiar una busqueda en la base de datos
+        /// a travez de ID
+        /// </param>
+        /// <returns>
+        /// Regresa una variable de tipo Alamcen que tendrea alamacenado los datos de un registro
+        /// de la tabla Almacen que coincidan con el id proporcionado.
+        /// </returns>
+        /// <exception cref="Exception">
+        /// Encaso de no poder encontrar o establecer una conexion hacia la base de datos
+        /// mandara un mensaje de que no se pudo realizar la conexion hacia la base de datos.
+        /// En caso de que no se pudo encontrar el regsitros a buscar regresara un mensaje 
+        /// de que no se pudo encontrar el registro.
+        /// </exception>
         public Almacen ObtenerUno(string id)
         {
             try
@@ -147,6 +199,25 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
+        /// <summary>
+        /// Meodo que permite Elimnar un registro de la base de datos de la tabla Alamcen
+        /// mediante un variable ID que permite la busqeuda de rgistro
+        /// </summary>
+        /// <param name="id">
+        /// id vairable de tipo String que almacena el ID de un registro de la tabla Almacen
+        /// que permitira la busqeuda de un registro en la base de datos para su posterior eliminacion.
+        /// </param>
+        /// <returns>
+        /// Regresa una variable de tipo Booleano si esta es variable tiene el valor de 1 o True
+        /// indicara que el registro se pudo eliminar, si la variable tiene el vaor de 0 o false
+        /// indicara que el registro no pudo eliminarse.
+        /// </returns>
+        /// <exception cref="Exception">
+        /// Encaso de no poder encontrar o establecer una conexion hacia la base de datos
+        /// mandara un mensaje de que no se pudo realizar la conexion hacia la base de datos.
+        /// En caso de que no se pudo encontrar el regsitros a buscar regresara un mensaje 
+        /// de que no se pudo encontrar el registro.
+        /// </exception>
         public bool eliminar(string id)
         {
             try
@@ -191,6 +262,24 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
+        /// <summary>
+        /// Metodo que permite Actualizar un registro de la tabla Almacen.
+        /// </summary>
+        /// <param name="almacen">
+        /// Paramaetro de entrada de tipo Almacen que contiene todos los datos de un registro
+        /// de la base de datos de la talba Almacen.
+        /// </param>
+        /// <returns>
+        /// Regresa una variable de tipo Booleano que contendra un valor de 1 o True cuando
+        /// la actualizacion del registro se realizo con exio, y tendra un valor de 0 o false
+        /// en caso de que no se pudo reailzar.
+        /// </returns>
+        /// <exception cref="Exception">
+        /// Encaso de no poder encontrar o establecer una conexion hacia la base de datos
+        /// mandara un mensaje de que no se pudo realizar la conexion hacia la base de datos.
+        /// En caso de que no se pudo Editar o acutualizar el registro regresa un mensaje
+        /// donde indica que la actulizacion no se logro realizar.
+        /// </exception>
         public bool editar(Almacen almacen)
         {
             try
@@ -231,6 +320,23 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
+        /// <summary>
+        /// Metodo que permite Agregar un registro en la base de datos en la tabla de alamcen.
+        /// </summary>
+        /// <param name="almacen">
+        /// Parametro de tipo Almacen que recibe todos los datos que se alamacenaran
+        /// en el nuevor registro de la tabla alamcen de la base de datos del programa
+        /// </param>
+        /// <returns>
+        /// Regresa una variable de tipo int con el valor de 1 si el registro se realizo con exito
+        /// y con un valor de tipo 0 cuando no registro no se pudo realizar.
+        /// </returns>
+        /// <exception cref="Exception">
+        /// Encaso de no poder encontrar o establecer una conexion hacia la base de datos
+        /// mandara un mensaje de que no se pudo realizar la conexion hacia la base de datos.
+        /// En caso de que no se pudo Agregar o incertar el registro regresa un mensaje
+        /// donde indica que el registro no se logro realizar.
+        /// </exception>
         public int agregar(Almacen almacen)
         {
             try

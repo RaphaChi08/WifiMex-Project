@@ -9,8 +9,30 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-     public class DAOEmpleados
+    /// <summary>
+    /// Clase DAOEmpleados que contiene los metodos para realizar consultas, inserciones, actulizaciones y eliminacion
+    /// de registros de la tabla Empleados de la base de datos del programa.   
+    /// </summary>
+    public class DAOEmpleados
     {
+        /// <summary>
+        /// Metodo que se utiliza para iniciar seccion en el programa mediante la comparacion
+        /// de un usuario y contrasela en la base de datos.
+        /// </summary>
+        /// <param name="usuario">
+        /// Paramaetro que recibe un string con un usuario para su comparacion en la base de datos
+        /// </param>
+        /// <param name="password">
+        /// Parametro que recibe un sring con la contrasela para su comparacion con una de la base de datos
+        /// </param>
+        /// <returns>
+        /// Regesa un objeto de tipo usuario si se encontro al usuario y permite el ecceso al programa
+        /// en caso de lo contrario concidencias no regresa un objeto vacio y no permite el acceso al programa.
+        /// </returns>
+        /// <exception cref="Exception">
+        /// En caso de no poder conectarse al sistem mostrara un mensaje donde indique que no se pudo
+        /// conectar al servidor.
+        /// </exception>
         public Empleados IniciarSeccion(string usuario, string password)
         {
             try
@@ -44,7 +66,18 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
-
+        /// <summary>
+        /// Metodo que obtiene un lista con todos los registros de la tabla de Emplados.
+        /// </summary>
+        /// <returns>
+        /// Regresa una lista de Tipo Empleados con todos los registros de la tabla Empelados
+        /// </returns>
+        /// <exception cref="Exception">
+        /// En caso de no poder conectarse al sistem mostrara un mensaje donde indique que no se pudo
+        /// conectar al servidor.
+        /// En caso de no encontrar ningun registro regresa un mensaje que indicaque no se encontraron
+        /// registros en la tabla
+        /// </exception>
         public List<Empleados> ObtenerEmpleados()
         {
             try
@@ -90,6 +123,23 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
+        /// <summary>
+        /// Metodo que obtiene un lista con todos los registros de la tabla de Emplados que concidan con
+        /// el ID propocionado.
+        /// </summary>
+        /// <param name="id">
+        /// Parametro que recive un String con ID para buscar un registro en la tabla de Empleados
+        /// </param>
+        /// <returns>
+        /// Regresa una lista de Tipo Empleados con todos los registros de la tabla Empelados que concidan
+        /// con el ID propocionado.
+        /// </returns>
+        /// <exception cref="Exception">
+        /// En caso de no poder conectarse al sistem mostrara un mensaje donde indique que no se pudo
+        /// conectar al servidor.
+        /// En caso de no encontrar ningun registro regresa un mensaje que indicaque no se encontraron
+        /// registros en la tabla
+        /// </exception>
         public List<Empleados> ObtenerEmpleado(string id)
         {
             try
@@ -136,7 +186,19 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
-
+        /// <summary>
+        /// Metodo que obtiene un lista con todos los registros de la tabla de Emplados que estan activos.
+        /// </summary>
+        /// <returns>
+        /// Regresa una lista de Tipo Empleados con todos los registros de la tabla Empelados que esten
+        /// en estado activo
+        /// </returns>
+        /// <exception cref="Exception">
+        /// En caso de no poder conectarse al sistem mostrara un mensaje donde indique que no se pudo
+        /// conectar al servidor.
+        /// En caso de no encontrar ningun registro regresa un mensaje que indicaque no se encontraron
+        /// registros en la tabla
+        /// </exception>
         public List<Empleados> ObtenerEmpleadosActivos()
         {
             try
@@ -182,6 +244,19 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
+        /// <summary>
+        /// Metodo que obtiene un lista con todos los registros de la tabla de Emplados que estan inactivos.
+        /// </summary>
+        /// <returns>
+        /// Regresa una lista de Tipo Empleados con todos los registros de la tabla Empelados que esten
+        /// en estado inactivo
+        /// </returns>
+        /// <exception cref="Exception">
+        /// En caso de no poder conectarse al sistem mostrara un mensaje donde indique que no se pudo
+        /// conectar al servidor.
+        /// En caso de no encontrar ningun registro regresa un mensaje que indicaque no se encontraron
+        /// registros en la tabla
+        /// </exception>
         public List<Empleados> ObtenerEmpleadosInactivos()
         {
             try
@@ -227,7 +302,23 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
-
+        /// <summary>
+        /// Metodo que obtiene un objeto con el registros de la tabla de Emplados que concidan con
+        /// el ID propocionado.
+        /// </summary>
+        /// <param name="id">
+        /// Parametro que recive un String con ID para buscar un registro en la tabla de Empleados
+        /// </param>
+        /// <returns>
+        /// Regresa una objeto de Tipo Empleados con todos los registros de la tabla Empelados que concidan
+        /// con el ID propocionado.
+        /// </returns>
+        /// <exception cref="Exception">
+        /// En caso de no poder conectarse al sistem mostrara un mensaje donde indique que no se pudo
+        /// conectar al servidor.
+        /// En caso de no encontrar ningun registro regresa un mensaje que indicaque no se encontraron
+        /// registros en la tabla
+        /// </exception>
         public Empleados ObtenerUnEmpleado(string id)
         {
             try
@@ -273,7 +364,22 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
-        // metodo para agregar a un empleado
+        /// <summary>
+        /// Metodo para realiar un nuevo registro en la tabla de empleados.
+        /// </summary>
+        /// <param name="emp">
+        /// objeto de tipo empleado que recibira todos los datos para el nuevo registro
+        /// de la tabla empleados.
+        /// </param>
+        /// <returns>
+        /// Regresa una int con un valor de 1 si el registro se pudo realizar y un o si no se realizo el registro
+        /// </returns>
+        /// <exception cref="Exception">
+        /// En caso de no poder conectarse al sistem mostrara un mensaje donde indique que no se pudo
+        /// conectar al servidor.
+        /// En caso de que no se el registro no se pudo realizar mandara un mensaje donde indica
+        /// quue no se pudo realizar el registro.
+        /// </exception>
         public int AgregarEmpleado(Empleados emp)
         {
             try
@@ -325,7 +431,23 @@ namespace Datos
             }
 
         }
-
+        /// <summary>
+        /// Metodo para actualizar un registro de la tabla de empleados
+        /// </summary>
+        /// <param name="emp">
+        /// objeto de tipo empleado que recibira todos los datos para la actulizacion
+        /// del registro de la tabla empleados.
+        /// </param>
+        /// <returns>
+        /// Regresa una variable de tipo Boolean con valor 1 0 true si el registro se pudo actulizar,
+        /// y un valor de 0 o false si no se pudo actualizar el registro
+        /// </returns>
+        /// <exception cref="Exception">
+        /// En caso de no poder conectarse al sistem mostrara un mensaje donde indique que no se pudo
+        /// conectar al servidor.
+        /// En caso de que no se el registro no se pudo actulizar mandara un mensaje donde indica
+        /// quue no se pudo realizar el registro.
+        /// </exception>
         public bool ModificarEmpleado(Empleados emp)
         {
             try
@@ -362,7 +484,23 @@ namespace Datos
                 Conexion.desconectar();
             }
         }
-
+        /// <summary>
+        /// Metodo que elimna un registro de la tabla de empleados
+        /// </summary>
+        /// <param name="id">
+        /// Parametro que recive un String con un ID proporcionado para buscar un registro
+        /// para su posterior eliminacion.
+        /// </param>
+        /// <returns>
+        /// Regresa una variable de tipo Boolean con valor 1 0 true si el registro se pudo eliminar,
+        /// y un valor de 0 o false si no se pudo elimnar el registro
+        /// </returns>
+        /// <exception cref="Exception">
+        /// En caso de no poder conectarse al sistem mostrara un mensaje donde indique que no se pudo
+        /// conectar al servidor.
+        /// En caso de que no el registro no se pudo eliminar mandara un mensaje donde indica
+        /// quue no se pudo realizar el registro.
+        /// </exception>
         public bool EliminarEmpleado(string id)
         {
             try
