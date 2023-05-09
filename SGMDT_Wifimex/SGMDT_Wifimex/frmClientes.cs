@@ -11,14 +11,28 @@ using Datos;
 
 namespace SGMDT_Wifimex
 {
+    /// <summary>
+    /// Formulario de menu principal de Clientes, donde se daran las opciones de agregar, actulizar,
+    /// Buscar y elimnar registros de la tabla de Clientes.
+    /// </summary>
     public partial class frmClientes : Form
     {
+        /// <summary>
+        /// Constructor del formulario donde se cargaran los controles que estaran visibles en 
+        /// el formulario, tambien cargara los datos de de la tabla de almacen en una tabla para su
+        /// visualizacion
+        /// </summary>
         public frmClientes()
         {
             InitializeComponent();
             cargarTabla();
 
         }
+
+        /// <summary>
+        /// Mentodo que sirve para cargar los datos de la tabla Clientes en una tabla del sistema
+        /// haciendo una instancia del DAO de Clientes al metodo obtener todos los registros.
+        /// </summary>
         public void cargarTabla()
         {
             DAOCliente dat = new DAOCliente();
@@ -26,6 +40,14 @@ namespace SGMDT_Wifimex
             dgvClientes.Columns["nomCliente"].HeaderText = "Nombre del cliente";
             dgvClientes.Columns["idCliente"].HeaderText = "Clave del Cliente";
         }
+
+        /// <summary>
+        /// evento del boton Añadir, al dar click en este boton abrira la ventana de
+        /// agrega/modificar un registro de Clientes. haciendo una instancia del
+        /// formulario de agregar/modificar Clientes, cundo se finalice
+        /// el tramite de añadir un nuevo registro se volvera a cargar la tabla
+        /// con los nuevos registros
+        /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddModyCliente frm = new frmAddModyCliente("", 1);
@@ -36,6 +58,14 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// evento del boton Modificar, al selecionar un registro
+        /// de la tabla y dar click en este boton abrira la ventana de
+        /// agrega/modificar un registro de Clientes. haciendo una instancia del
+        /// formulario de agregar/modificar Clientes, cundo se finalice
+        /// el tramite de modificar un registro se volvera a cargar la tabla
+        /// con los registros actualizados.
+        /// </summary>
         private void btnModify_Click(object sender, EventArgs e)
         {
             if (dgvClientes.SelectedRows.Count == 1)
@@ -54,6 +84,13 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// Evento del boton eliminar, al dar click a elminar se eliminara el registro selecionado
+        /// de la tabla. Al selecionar un registro de la tabla y dar click a elimnar emergera un mensaje
+        /// donde se pregunta si se quiere eliminar el registro, al selecionar si el registro se eliminara
+        /// de la base de datos y cargara la tabla con los registros actializados, en caso de selecionar
+        /// mo la accion se abortara y no habra  ningun cambio.
+        /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvClientes.SelectedRows.Count == 1)
@@ -79,6 +116,13 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// Evento de caja de texto, cuando se escribe en la caja de texto,
+        /// al escribir en la caja de texto llamara al metodo de buscar
+        /// del DAO de clientes, si encuentra concidencias con algun registro
+        /// de la base de datos de la tabla Clientes, cargara los registros que coicidan 
+        /// en la tabla de sistema.
+        /// </summary>
         private void txtBus_TextChanged(object sender, EventArgs e)
         {
             if (txtBus.Text.Length >= 4)

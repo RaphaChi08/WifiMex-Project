@@ -11,14 +11,28 @@ using System.Windows.Forms;
 
 namespace SGMDT_Wifimex
 {
+    /// <summary>
+    /// Formulario de menu principal de Empleados, donde se daran las opciones de agregar, actulizar,
+    /// Buscar y elimnar registros de la tabla de Empleados.
+    /// </summary>
     public partial class frmEmpleados : Form
     {
+        /// <summary>
+        /// Constructor del formulario donde se cargaran los controles que estaran visibles en 
+        /// el formulario, tambien cargara los datos de de la tabla de Empleados en una tabla para su
+        /// visualizacion
+        /// </summary>
         public frmEmpleados()
         {
             InitializeComponent();
             CargarTabla();
         }
-        // Metodos que cargan la tabla
+
+        /// <summary>
+        /// Mentodo que sirve para cargar los datos de la tabla Empleados en una tabla del sistema
+        /// haciendo una instancia del DAO de Empleados al metodo obtener todos los registros
+        /// que esten en estado activos.
+        /// </summary>
         public void CargarTablaAc()
         {
             dgvEmpleados.DataSource = new DAOEmpleados().ObtenerEmpleadosActivos();
@@ -35,6 +49,11 @@ namespace SGMDT_Wifimex
             dgvEmpleados.Columns["Password"].Visible = false;
             dgvEmpleados.Columns["Estatus"].Visible = false;
         }
+
+        /// <summary>
+        /// Mentodo que sirve para cargar los datos de la tabla Empleados en una tabla del sistema
+        /// haciendo una instancia del DAO de Empleados al metodo obtener todos los registros.
+        /// </summary>
         public void CargarTabla()
         {
             dgvEmpleados.DataSource = new DAOEmpleados().ObtenerEmpleados();
@@ -51,6 +70,11 @@ namespace SGMDT_Wifimex
             dgvEmpleados.Columns["Password"].Visible = false;
             dgvEmpleados.Columns["Estatus"].Visible = false;
         }
+        /// <summary>
+        /// Mentodo que sirve para cargar los datos de la tabla Empleados en una tabla del sistema
+        /// haciendo una instancia del DAO de Empleados al metodo obtener todos los registros
+        /// en estado inactivos.
+        /// </summary>
         public void CargarTablaIn()
         {
             dgvEmpleados.DataSource = new DAOEmpleados().ObtenerEmpleadosInactivos();
@@ -67,6 +91,11 @@ namespace SGMDT_Wifimex
             dgvEmpleados.Columns["Password"].Visible = false;
             dgvEmpleados.Columns["Estatus"].Visible = false;
         }
+
+        /// <summary>
+        /// Mentodo que sirve para cargar los datos de la tabla Empleados en una tabla del sistema
+        /// haciendo una instancia del DAO de Empleados al metodo obtener todos los registros.
+        /// </summary>
         public void CargarTablaEm()
         {
             dgvEmpleados.DataSource = new DAOEmpleados().ObtenerEmpleado(txtBuscar.Text);
@@ -83,7 +112,14 @@ namespace SGMDT_Wifimex
             dgvEmpleados.Columns["Password"].Visible = false;
             dgvEmpleados.Columns["Estatus"].Visible = false;
         }
-        // Manda al formulario de agergar o modificar usuario
+
+        /// <summary>
+        /// evento del boton Añadir, al dar click en este boton abrira la ventana de
+        /// agrega/modificar un registro de Empleados. haciendo una instancia del
+        /// formulario de agregar/modificar Empleados, cundo se finalice
+        /// el tramite de añadir un nuevo registro se volvera a cargar la tabla
+        /// con los nuevos registros
+        /// </summary>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAgregarModificar frm = new frmAgregarModificar(1, "0");
@@ -94,6 +130,14 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// evento del boton Modificar, al selecionar un registro
+        /// de la tabla y dar click en este boton abrira la ventana de
+        /// agrega/modificar un registro de Empleados. haciendo una instancia del
+        /// formulario de agregar/modificar Empleados, cundo se finalice
+        /// el tramite de modificar un registro se volvera a cargar la tabla
+        /// con los registros actualizados.
+        /// </summary>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (dgvEmpleados.SelectedRows.Count > 0)
@@ -108,16 +152,34 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// Evento de boton mostrar todo, cuando se da click a este boton
+        /// mostrara todos los registros de la tabla empleados sin importar
+        /// si estan activos o inactivos
+        /// </summary>
         private void btnTodos_Click(object sender, EventArgs e)
         {
             CargarTabla();
         }
 
+        /// <summary>
+        /// Evento de boton buscar, cuando se da click a este boton
+        /// mostrara todos el registro que concida con lo que esta en la
+        /// caja de texto de la tabla empleados sin importar
+        /// si estan activos o inactivos
+        /// </summary>
         private void btnBusccar_Click(object sender, EventArgs e)
         {
             CargarTablaEm();
         }
 
+        /// <summary>
+        /// Evento del boton eliminar, al dar click a elminar se eliminara el registro selecionado
+        /// de la tabla. Al selecionar un registro de la tabla y dar click a elimnar emergera un mensaje
+        /// donde se pregunta si se quiere eliminar el registro, al selecionar si el registro se eliminara
+        /// de la base de datos y cargara la tabla con los registros actializados, en caso de selecionar
+        /// mo la accion se abortara y no habra  ningun cambio.
+        /// </summary>
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvEmpleados.SelectedRows.Count > 0)
@@ -138,11 +200,19 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// Evento de boton mostrar todo, cuando se da click a este boton
+        /// mostrara todos los registros de la tabla empleados inactivos
+        /// </summary>
         private void btnInactivos_Click(object sender, EventArgs e)
         {
             CargarTablaAc();
         }
 
+        /// <summary>
+        /// Evento de boton mostrar todo, cuando se da click a este boton
+        /// mostrara todos los registros de la tabla empleados inactivos
+        /// </summary>
         private void btnActivos_Click(object sender, EventArgs e)
         {
             CargarTablaIn();

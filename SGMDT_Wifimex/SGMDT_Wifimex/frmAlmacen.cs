@@ -11,14 +11,27 @@ using Datos;
 
 namespace SGMDT_Wifimex
 {
+    /// <summary>
+    /// Formulario de menu principal de Almacen, donde se daran las opciones de agregar, actulizar,
+    /// Buscar y elimnar registros de la tabla de almacen.
+    /// </summary>
     public partial class frmAlmacen : Form
     {
+        /// <summary>
+        /// Constructor del formulario donde se cargaran los controles que estaran visibles en 
+        /// el formulario, tambien cargara los datos de de la tabla de almacen en una tabla para su
+        /// visualizacion
+        /// </summary>
         public frmAlmacen()
         {
             InitializeComponent();
             cargarTabla();
         }
 
+        /// <summary>
+        /// Mentodo que sirve para cargar los datos de la tabla almacen en una tabla del sistema
+        /// haciendo una instancia del DAO de almacen al metodo obtener todos los registros.
+        /// </summary>
         public void cargarTabla()
         {
             dgvAlmacen.DataSource= new DAOAlmacen().ObtenerTodos();
@@ -27,6 +40,14 @@ namespace SGMDT_Wifimex
             dgvAlmacen.Columns["codigoBarra"].HeaderText = "Clave Recurso";
             dgvAlmacen.Columns["idEmpleado"].HeaderText = "Clave empleado Encargado";
         }
+
+        /// <summary>
+        /// evento del boton Añadir, al dar click en este boton abrira la ventana de
+        /// agrega/modificar un registro de alamacen. haciendo una instancia del
+        /// formulario de agregar/modificar alamcen, cundo se finalice
+        /// el tramite de añadir un nuevo registro se volvera a cargar la tabla
+        /// con los nuevos registros
+        /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddModyAlmacen frm= new  frmAddModyAlmacen("", 1);
@@ -37,6 +58,14 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// evento del boton Modificar, al selecionar un registro
+        /// de la tabla y dar click en este boton abrira la ventana de
+        /// agrega/modificar un registro de alamacen. haciendo una instancia del
+        /// formulario de agregar/modificar alamcen, cundo se funalice
+        /// el tramite de modificar un registro se volvera a cargar la tabla
+        /// con los registros actualizados.
+        /// </summary>
         private void btnModify_Click(object sender, EventArgs e)
         {
             if (dgvAlmacen.SelectedRows.Count == 1)
@@ -55,6 +84,13 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// Evento del boton eliminar, al dar click a elminar se eliminara el registro selecionado
+        /// de la tabla. Al selecionar un registro de la tabla y dar click a elimnar emergera un mensaje
+        /// donde se pregunta si se quiere eliminar el registro, al selecionar si el registro se eliminara
+        /// de la base de datos y cargara la tabla con los registros actializados, en caso de selecionar
+        /// mo la accion se abortara y no habra  ningun cambio.
+        /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvAlmacen.SelectedRows.Count == 1)

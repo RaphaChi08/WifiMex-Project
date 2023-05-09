@@ -11,14 +11,27 @@ using Datos;
 
 namespace SGMDT_Wifimex
 {
+    /// <summary>
+    /// Formulario de menu principal de Clientes, donde se daran las opciones de agregar, actulizar,
+    /// Buscar y elimnar registros de la tabla de Clientes.
+    /// </summary>
     public partial class frmContratos : Form
     {
+        /// <summary>
+        /// Constructor del formulario donde se cargaran los controles que estaran visibles en 
+        /// el formulario, tambien cargara los datos de de la tabla de Contratos en una tabla para su
+        /// visualizacion
+        /// </summary>
         public frmContratos()
         {
             InitializeComponent();
             CargarTabla();
         }
 
+        /// <summary>
+        /// Mentodo que sirve para cargar los datos de la tabla Contratos en una tabla del sistema
+        /// haciendo una instancia del DAO de Contratos al metodo obtener todos los registros.
+        /// </summary>
         public void CargarTabla()
         {
             dgvContratos.DataSource= new DAOContratos().ObtenerTodos();
@@ -29,6 +42,13 @@ namespace SGMDT_Wifimex
             dgvContratos.Columns["idCliente"].HeaderText = "Clave del cliente";
         }
 
+        /// <summary>
+        /// evento del boton Añadir, al dar click en este boton abrira la ventana de
+        /// agrega/modificar un registro de Contratos. haciendo una instancia del
+        /// formulario de agregar/modificar Contratos, cundo se finalice
+        /// el tramite de añadir un nuevo registro se volvera a cargar la tabla
+        /// con los nuevos registros
+        /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddModyContratos frm = new frmAddModyContratos("", 1);
@@ -39,6 +59,14 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// evento del boton Modificar, al señecionar un registro
+        /// de la tabla y dar click en este boton abrira la ventana de
+        /// agrega/modificar un registro de Contratos. haciendo una instancia del
+        /// formulario de agregar/modificar Contratos, cundo se funalice
+        /// el tramite de modificar un registro se volvera a cargar la tabla
+        /// con los registros actualizados.
+        /// </summary>
         private void btnModify_Click(object sender, EventArgs e)
         {
             if (dgvContratos.SelectedRows.Count == 1)
@@ -57,6 +85,13 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// Evento del boton eliminar, al dar click a elminar se eliminara el registro selecionado
+        /// de la tabla. Al selecionar un registro de la tabla y dar click a elimnar emergera un mensaje
+        /// donde se pregunta si se quiere eliminar el registro, al selecionar si el registro se eliminara
+        /// de la base de datos y cargara la tabla con los registros actializados, en caso de selecionar
+        /// mo la accion se abortara y no habra ningun cambio.
+        /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvContratos.SelectedRows.Count == 1)
@@ -83,6 +118,13 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// Evento de caja de texto, cuando se escribe en la caja de texto,
+        /// al escribir en la caja de texto llamara al metodo de buscar
+        /// del DAO de Contratos, si encuentra concidencias con algun registro
+        /// de la base de datos de la tabla Contratos, cargara los registros que coicidan 
+        /// en la tabla de sistema.
+        /// </summary>
         private void txtBus_TextChanged(object sender, EventArgs e)
         {
             if (txtBus.Text.Length >= 4)

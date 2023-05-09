@@ -13,11 +13,26 @@ using Modelos;
 
 namespace SGMDT_Wifimex
 {
+    /// <summary>
+    /// Formulario que agrega y modifica los registros de la tabla Contratos
+    /// </summary>
     public partial class frmAddModyContratos : Form
     {
+        /// <summary>
+        /// Variables que sirven para validar la opcion que se mostrara en el formulario
+        /// ya se Agregar o modificar.
+        /// </summary>
         public Boolean modificado;
         public int Agregado;
 
+        /// <summary>
+        /// Metodo que sirve para validar que las cajas de texto del formulario tengan
+        /// el formato correcto que se solicita
+        /// </summary>
+        /// <returns>
+        /// regresa un true si los formatos de las cajas de texto son validos en caso de
+        /// lo contrario regresa un false.
+        /// </returns>
         public bool Verificar()
         {
 
@@ -56,6 +71,20 @@ namespace SGMDT_Wifimex
         }
 
         private int opcion;
+
+        /// <summary>
+        /// Costrcutor del formulario donde cargan todos los controles que
+        /// estan dentro del formulario.
+        /// </summary>
+        /// <param name="ID">
+        /// Parametro que resive el constructor en caso de que se de la opcion de modificar
+        /// un registro para buscar el registro a modificar
+        /// </param>
+        /// <param name="Opcion">
+        /// Parametro que indica cuales controles tiene que cargar el formulario
+        /// este indica si el fomulario tiene que ponerse en modo de agregar un
+        /// nuevo registro o en mode de modificar un registro ya existente.
+        /// </param>
         public frmAddModyContratos(string ID, int Opcion)
         {
             InitializeComponent();
@@ -94,6 +123,16 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// Evento click de boton, al dar click mandara y guardara el nuevo registro o modificara
+        /// un registro ya existente.
+        /// En caso de que la opcion selecionada sea agregar se hace una referencia al modelo de Contratos
+        /// asi como al DAO Contratos para poder utiliazar el metodo de agregar un nuevo registro.
+        /// Si la opcion seleccionada es modificar tambien hara referencias a las mismas clases ya
+        /// mencionadas, con el cambio de que ahora llamara al metodo de actulizar un registro.
+        /// Al finalizar lanzar un mensaje de registro exitoso o fallo de regsitro, al cerrar
+        /// el mensaje regresara al menu principal de Contratos.
+        /// </summary>
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -151,6 +190,10 @@ namespace SGMDT_Wifimex
             }
         }
 
+        /// <summary>
+        /// Evento de boton cancer, al dar click al boton cierra la ventan y regresa al menu principal
+        /// de Contratos.
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
