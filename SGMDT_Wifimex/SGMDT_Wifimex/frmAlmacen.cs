@@ -116,5 +116,26 @@ namespace SGMDT_Wifimex
                 MessageBox.Show("Se debe seleccionar un elemento de la tabla para continuar", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void frmAlmacen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text.Length >= 4)
+            {
+                dgvAlmacen.DataSource = new DAOAlmacen().Buscar(txtBuscar.Text);
+                dgvAlmacen.Columns["idAlmacen"].HeaderText = "Clave Almacen";
+                dgvAlmacen.Columns["cantProducto"].HeaderText = "Cantidad en almacen";
+                dgvAlmacen.Columns["codigoBarra"].HeaderText = "Clave Recurso";
+                dgvAlmacen.Columns["idEmpleado"].HeaderText = "Clave empleado Encargado";
+            }
+            else
+            {
+                cargarTabla();
+            }
+        }
     }
 }
