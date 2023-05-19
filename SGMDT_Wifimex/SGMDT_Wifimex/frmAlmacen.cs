@@ -117,11 +117,6 @@ namespace SGMDT_Wifimex
             }
         }
 
-        private void frmAlmacen_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (txtBuscar.Text.Length >= 4)
